@@ -1,0 +1,75 @@
+.carousel-indicators {
+    bottom:-40px;
+	left:0;
+	width:100%;
+	background:#ccc;
+	padding: 6px 0px;
+	margin-left:0;
+	border-top:2px solid #fff;
+}
+.carousel-indicators li {
+	width:12px;
+	height:12px;	
+	background:#fff;
+	border-color:#fff;
+ 
+}
+.carousel-indicators .active {
+	width:14px;
+	height:14px;
+	background:#428bca;
+	border-color:#428bca;
+}
+.carousel-inner .thumbnail {
+	margin-bottom:0;
+	border-bottom-left-radius:0;
+	border-bottom-right-radius:0;
+}
+.carousel-inner .caption {
+	background:#ddd;
+	padding: 10px;
+}
+
+
+
+.navbar
+{transition: all linear 0.5s;
+background: #fff;
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img
+{height:220px;
+width:100%;}
+
+.caption h4
+{font-weight:bold;}
+
+.top_nav a:hover
+{text-decoration:none;}
+
+.tab-content
+{background:url(../img/search_tabs.png) no-repeat center left 20px #2f3a41;}
+
+.inner .form-control
+{width:32%;
+float:left;
+padding-top:0;
+padding-bottom:0;
+height:27px;}
+
+ .fstElement { font-size: 1.2em; }
+            .fstToggleBtn { min-width: 16.5em; }
+
+            .submitBtn { display: none; }
+
+            .fstMultipleMode { display: block; }
+            .fstMultipleMode .fstControls { width: 100%; }
+			.main_nav ul li a{font-size:15px;}
+			.bc a{font-size:14px;}
+			.panel-default>.panel-heading
+			{font-size:14px;}
+			
+			.panel-default p 
+			{font-size:14px;}
+			
+			.pagination>li>a, .pagination>li>span
+			{font-size:14px;}

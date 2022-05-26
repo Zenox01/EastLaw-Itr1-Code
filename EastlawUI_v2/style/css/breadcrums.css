@@ -1,0 +1,102 @@
+@import url(https://fonts.googleapis.com/css?family=Ropa+Sans);
+
+
+
+
+
+
+.bc ul{
+  text-align: center;
+  padding: 0;
+  list-style: none;
+ 
+}
+
+.bc{
+  overflow: hidden;
+  width: 100%; margin:0;
+}
+
+.bc li{
+  float: left;
+  margin:0px 6px 0 18px;
+  height:30px;
+}
+.bc li a{color:#333;}
+.bc li a:hover{text-decoration:none;}
+.bc li{
+  background-image: linear-gradient(left bottom, #F5F5F5 31%, #DDDDDD 83%);
+background-image: -o-linear-gradient(left bottom, #F5F5F5 31%, #DDDDDD 83%);
+background-image: -moz-linear-gradient(left bottom, #F5F5F5 31%, #DDDDDD 83%);
+background-image: -webkit-linear-gradient(left bottom, #F5F5F5 31%, #DDDDDD 83%);
+background-image: -ms-linear-gradient(left bottom, #F5F5F5 31%, #DDDDDD 83%);
+font-family: "Ropa Sans";
+background-image: -webkit-gradient(
+  linear,
+  left bottom,
+	right top,
+	color-stop(0.31, #F5F5F5),
+	color-stop(0.83, #DDDDDD)
+); 
+  padding: 6px 16px;
+  float: left;
+  text-decoration: none;
+  color: #777;
+  text-shadow: 1px 1px 0 rgba(255,255,255,.9); 
+  position: relative;
+}
+
+.bc li:hover{
+  background: #ddd;
+  color: #444;
+}
+
+.bc li:before{
+  content: "";
+  position: absolute;
+  top: 50%; 
+  margin-top: -15px;  
+  border-width: 15px 0 15px 18px;
+  border-style: solid;
+  border-color: #f5f5f5 #f5f5f5 #f5f5f5 transparent;
+  left: -18px;
+}
+
+.bc li:hover:before{
+  border-color: #ddd #ddd #ddd transparent;
+}
+
+.bc li:after{
+  content: "";
+  position: absolute;
+  top: 50%; 
+  margin-top: -14px;   
+  border-top: 14px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #ddd;
+  right: -15px;
+}
+
+.bc li:hover:after{
+  border-left-color: #ddd;
+}
+
+.bc .first {
+  border-radius: 5px 0 0 5px;
+  margin-left: -15px;
+}
+
+.bc .first:before {
+  visibility: hidden;
+}
+
+.bc .current{
+  border-radius: 0 5px 5px 0;
+  color: #222;
+}
+
+
+
+.bc .current:after{
+  content: normal;
+}

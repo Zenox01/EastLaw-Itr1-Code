@@ -1,0 +1,482 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="EastlawUI_v2.adminpanel.Site1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxControl" %>
+<!DOCTYPE html>
+
+<html>
+    <head runat="server">
+        <meta charset="UTF-8">
+        <title>East Law - Admin Panel</title>
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <!-- bootstrap 3.0.2 -->
+        <link href="/adminpanel/media/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- font Awesome -->
+        <link href="/adminpanel/media/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <!-- Ionicons -->
+        <link href="/adminpanel/media/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+        <!-- Morris chart -->
+        <link href="/adminpanel/media/css/morris/morris.css" rel="stylesheet" type="text/css" />
+        <!-- jvectormap -->
+        <link href="/adminpanel/media/css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+        <!-- fullCalendar -->
+        <link href="/adminpanel/media/css/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
+        <!-- Daterange picker -->
+        <link href="/adminpanel/media/css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+        <!-- bootstrap wysihtml5 - text editor -->
+        <link href="/adminpanel/media/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+        <!-- Theme style -->
+        <link href="/adminpanel/media/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" type="text/css" href="/adminpanel/media/css/aui-production.min.css" />
+        <script type="text/javascript" src="/adminpanel//media/js/aui-production.min.js"></script>
+        <asp:ContentPlaceHolder ID="headCnt" runat="server"></asp:ContentPlaceHolder>
+        <script language="javascript">
+	    function confirm_delete() {
+	        if (confirm("Are you sure you want to delete this item?") == true)
+	            return true;
+	        else
+	            return false;
+	    }
+		    
+</script>
+        <%--<link rel="stylesheet" href="media/chosen/docsupport/style.css">
+  <link rel="stylesheet" href="media/chosen/docsupport/prism.css">--%>
+  <link rel="stylesheet" href="media/chosen/chosen.css">
+    </head>
+    <body class="skin-blue">
+        
+        <!-- header logo: style can be found in header.less -->
+        <header  id="divHeader" runat="server" class="header">
+            <a href="/" class="logo">
+                <!-- Add the class icon to your logo image or logo icon to add the margining -->
+                East Law - Admin Panel
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                       
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="glyphicon glyphicon-user"></i>
+                                <span> <asp:Label ID="lblUserName" runat="server"></asp:Label> <i class="caret"></i></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <%--<li class="user-header bg-light-blue">
+                                    <img src="img/avatar3.png" class="img-circle" alt="User Image" />
+                                    <p>
+                                        Jane Doe - Web Developer
+                                        <small>Member since Nov. 2012</small>
+                                    </p>
+                                </li>--%>
+                                <!-- Menu Body -->
+                               
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                   <%-- <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    </div>--%>
+                                    <div class="pull-right">
+                                        <a href="/" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                   <%-- <div class="user-panel">
+                        <div class="pull-left image">
+                            <img src="img/avatar3.png" class="img-circle" alt="User Image" />
+                        </div>
+                        <div class="pull-left info">
+                            <p>Hello, Jane</p>
+
+                            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                        </div>
+                    </div>
+                    <!-- search form -->
+                    <form action="#" method="get" class="sidebar-form">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                            <span class="input-group-btn">
+                                <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>--%>
+                    <!-- /.search form -->
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu">
+                        <li class="active" id="MainliAdminDashboard" runat="server" style="display:none">
+                            <a href="/adminpanel/adminmain.aspx">
+                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="active" id="MainUserDashboard" runat="server" style="display:none">
+                            <a href="/adminpanel/AdminUsers.aspx">
+                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                            </a>
+                        </li>
+                        
+                        <li class="treeview" id="MainliManageCases" runat="server" style="display:none">
+                            <a href="#">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                <span>Manage Cases</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liSingleCase" runat="server" style="display:none"><a href="/adminpanel/ReviewCasesMigration.aspx"><i class="fa fa-angle-double-right"></i>Add Single Cases</a></li>
+                                <li id="liMigrateCaseUtility" runat="server" style="display:none"><a href="/adminpanel/UtilityCases.aspx"><i class="fa fa-angle-double-right"></i>Migrate Cases Data Utility</a></li>
+                                <li id="liReviewCaseUtility" runat="server" style="display:none"><a href="/adminpanel/CasesMigrationList.aspx"><i class="fa fa-angle-double-right"></i>Review Cases Migration Utility</a></li>
+
+                                <li id="liRemoveCaseByFile" runat="server" style="display:none"><a href="/adminpanel/DeleteCasesByFiles.aspx"><i class="fa fa-angle-double-right"></i>Remove Cases By File</a></li>
+                                <li id="liManageCitationVariation" runat="server" style="display:none"><a href="/adminpanel/ManageCitationVariations.aspx"><i class="fa fa-angle-double-right"></i>Manage Citation Variation</a></li>
+                                
+                                <li id="liGenerateCaseExcel" runat="server" style="display:none"><a href="/adminpanel/GenerateCaseExcel.aspx"><i class="fa fa-angle-double-right"></i>Generate Cases Excelsheet</a></li>
+                                <li id="liManageJournals" runat="server" style="display:none"><a href="/adminpanel/ManageJournals.aspx"><i class="fa fa-angle-double-right"></i>Manage Journals</a></li>
+                                
+                                <li id="liManageAdvocates" runat="server" style="display:none"><a href="/adminpanel/ManageAdvocates.aspx"><i class="fa fa-angle-double-right"></i>Manage Advocates</a></li>
+                                <li id="liCaseReport" runat="server" style="display:none"><a href="/adminpanel/CasesReport.aspx"><i class="fa fa-angle-double-right"></i>Case Reports</a></li>
+                                <li id="liGeneralSearch" runat="server" style="display:none"><a href="/adminpanel/GeneralSearch.aspx"><i class="fa fa-angle-double-right"></i>General Search</a></li>
+                                
+                            </ul>
+                        </li>
+                         <li class="treeview" id="MainliManageCourt" runat="server" style="display:none">
+                            <a href="#">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                <span>Manage Courts</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                
+                                
+                                <li id="liAddCourtsMaster" runat="server" style="display:none"><a href="/adminpanel/AddEditCourts.aspx"><i class="fa fa-angle-double-right"></i>Add Court Master</a></li>
+                                <li id="liManageCourtsNames" runat="server" style="display:none"><a href="/adminpanel/ManageCourts.aspx"><i class="fa fa-angle-double-right"></i>Manage Courts Names</a></li>
+                                <li id="liManageCourtsMaster" runat="server" style="display:none"><a href="/adminpanel/ManageCourtsMaster.aspx"><i class="fa fa-angle-double-right"></i>Manage Courts Master</a></li>
+                                <li id="liCoutAppealMaster" runat="server" style="display:none"><a href="/adminpanel/managecourtappealmastr.aspx"><i class="fa fa-angle-double-right"></i>Manage Court Appeal Master</a></li>
+                                <li id="liCourtHierarchyMaster" runat="server" style="display:none"><a href="/adminpanel/ManageCourtHierarchy.aspx"><i class="fa fa-angle-double-right"></i>Manage Court Hierarchy Master</a></li>
+                                
+                            </ul>
+                        </li>
+                          <li class="treeview" id="MainliManageJudges" runat="server" style="display:none">
+                            <a href="#">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                <span>Manage Judges</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                
+                              <li id="liManageJudges" runat="server" style="display:none"><a href="/adminpanel/ManageJudges.aspx"><i class="fa fa-angle-double-right"></i>Manage Judges</a></li>
+                                <li id="liJudgesCasesPanel" runat="server" style="display:none"><a href="/adminpanel/JudgeMergePanel.aspx"><i class="fa fa-angle-double-right"></i>Judges/Cases Panel <span style="color:red">(New)</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview" id="MainliStatutesUtility" runat="server" style="display:none">
+                            <a href="#">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                <span>Statutes Utility</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liMigrateStatutesUtility" runat="server" style="display:none"><a href="/adminpanel/StatutesUtility.aspx"><i class="fa fa-angle-double-right"></i>Migrate Statutes Data Utility</a></li>
+                                <li id="liReviewStatutesUtility" runat="server" style="display:none"><a href="#"><i class="fa fa-angle-double-right"></i>Review Statutes Migration Utility</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview" id="MainliWebStatutes" runat="server" style="display:none">
+                            <a href="#">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                <span>Web Statutes</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liWebStatutesCategory" runat="server" style="display:none"><a href="/adminpanel/StatutesCategories.aspx"><i class="fa fa-angle-double-right"></i>Manage Statutes Categories</a></li>
+                                <li id="liWebStatutesScrapping" runat="server" style="display:none"><a href="/adminpanel/WebScrapStatutes.aspx"><i class="fa fa-angle-double-right"></i>Scraping Process (Statutes)</a></li>
+                                <li id="liAddStatutes" runat="server" style="display:none"><a href="/adminpanel/AddStatute.aspx"><i class="fa fa-angle-double-right"></i>Add Statutes</a></li>
+                                <li id="liWebStatutesManage" runat="server" style="display:none"><a href="/adminpanel/ManageWebScapStatutes.aspx"><i class="fa fa-angle-double-right"></i>Manage Statutes</a></li>
+
+                                <li id="liStatuteSOA" runat="server" style="display:none"><a href="/adminpanel/StatuteSectionPanel.aspx"><i class="fa fa-angle-double-right"></i>Manage Statutes SOA</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview" id="MainliMasters" runat="server" style="display:none">
+                            <a href="#">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                <span>Masters</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liManageKeywords" runat="server" style="display:none"><a href="/adminpanel/ManageKeywords.aspx"><i class="fa fa-angle-double-right"></i>Manage Keywords</a></li>
+                                <li id="liManageDictionary" runat="server" style="display:none"><a href="/adminpanel/ManageDictionary.aspx"><i class="fa fa-angle-double-right"></i>Manage Dictionary</a></li>
+                                <li id="liManageLegalMaxim" runat="server" style="display:none"><a href="/adminpanel/ManageLegalMaxim.aspx"><i class="fa fa-angle-double-right"></i>Manage Legal Maxim</a></li>
+                             <li id="liManagePracticeAreaCat" runat="server" style="display:none"><a href="/adminpanel/ManagePracticeCategories.aspx"><i class="fa fa-angle-double-right"></i>Practice Area Categories</a></li>
+                                <li id="liManagePracticeAreaSubCat" runat="server" style="display:none"><a href="/adminpanel/ManagePracticeSubCategories.aspx"><i class="fa fa-angle-double-right"></i>Practice Area Sub Categories</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                        <li class="treeview" id="MainliDept" runat="server" style="display:none">
+                            <a href="#">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                <span>Manage Departments</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liCreateDept" runat="server" style="display:none"><a href="/adminpanel/AddDepartment.aspx"><i class="fa fa-angle-double-right"></i>Create Department</a></li>    
+                                <li id="liManageDept" runat="server" style="display:none"><a href="/adminpanel/ManageDepartments.aspx"><i class="fa fa-angle-double-right"></i>Manage Department</a></li>    
+                            </ul>
+                        </li>
+                        <li class="treeview" id="MainliGlossory" runat="server" style="display:none">
+                            <a href="#">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                <span>Glossory/Topics List</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liCreateGlossory" runat="server" style="display:none"><a href="/adminpanel/AddGlossary.aspx"><i class="fa fa-angle-double-right"></i>Create Glossory/Topic</a></li>    
+                                <li id="liManageGlossory" runat="server" style="display:none"><a href="/adminpanel/ManageGlossaryList.aspx"><i class="fa fa-angle-double-right"></i>Manage Glossory/Topic</a></li>    
+                            </ul>
+                        </li>
+                        <li class="treeview" id="MainliUsers" runat="server" style="display:none">
+                            <a href="#">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                <span>Users</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                             <li id="liAddUser" runat="server" style="display:none"><a href="/adminpanel/AddUsers.aspx"><i class="fa fa-angle-double-right"></i>Add New User</a></li>
+                              <li id="liManageUsers" runat="server" style="display:none"><a href="/adminpanel/ManageUsers.aspx"><i class="fa fa-angle-double-right"></i>Manage Users</a></li>
+                                <li id="liUpdateUserStatus" runat="server" style="display:none"><a href="/adminpanel/UpdateUserStatus.aspx"><i class="fa fa-angle-double-right"></i>Update Users Status</a></li>
+                                <li id="liGenerateUserOrder" runat="server" style="display:none"><a href="/adminpanel/GenerateUserOrder.aspx"><i class="fa fa-angle-double-right"></i>Generate User Orders</a></li>
+                                <li id="liResendNotification" runat="server" style="display:none"><a href="/adminpanel/ResendNotification.aspx"><i class="fa fa-angle-double-right"></i>Resend Notifications</a></li>
+                                <li id="liAddCompany" runat="server" style="display:none"><a href="/adminpanel/AddCompany.aspx"><i class="fa fa-angle-double-right"></i>Add New Company</a></li>
+                                <li id="liManageCompany" runat="server" style="display:none"><a href="/adminpanel/ManageCompanies.aspx"><i class="fa fa-angle-double-right"></i>Manage Companies</a></li>
+                                <li id="liManagePlans" runat="server" style="display:none"><a href="/adminpanel/ManagePlans.aspx"><i class="fa fa-angle-double-right"></i>Manage Plans</a></li>
+                                <li id="liUserReports" runat="server" style="display:none"><a href="/adminpanel/UsersReports.aspx"><i class="fa fa-angle-double-right"></i>Reports</a></li>
+                                <li id="liUserCRM" runat="server" style="display:none"><a href="/adminpanel/CRMUserView.aspx"><i class="fa fa-angle-double-right"></i>CRM</a></li>
+                                <li id="liUserExpiryLit" runat="server" style="display:none"><a href="/adminpanel/CRMUserExpiry.aspx"><i class="fa fa-angle-double-right"></i>CRM User Expiry List</a></li>
+                               
+                                
+                            </ul>
+                        </li>
+                        <li class="treeview" id="MainliGeneralAreas" runat="server" style="display:none">
+                            <a href="#">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                <span>General Areas</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                             <li id="liAddGeneralAreas" runat="server" style="display:none"><a href="/adminpanel/AddGeneralAreas.aspx"><i class="fa fa-angle-double-right"></i>Add General Areas</a></li>
+                                <li id="liManageGeneralAreas" runat="server" style="display:none"><a href="/adminpanel/ManageGeneralAreas.aspx"><i class="fa fa-angle-double-right"></i>Manage General Areas</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="treeview" id="MainliCMS" runat="server" style="display:none">
+                            <a href="#">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                <span>CMS</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liManageCMS" runat="server" style="display:none"><a href="/adminpanel/ManageCMSPages.aspx"><i class="fa fa-angle-double-right"></i>Manage Pages</a></li>    
+                            </ul>
+                        </li>
+                         <li class="treeview" id="MainliNews" runat="server" style="display:none">
+                            <a href="#">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                <span>News</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liAddNews" runat="server" style="display:none"><a href="/adminpanel/AddNews.aspx"><i class="fa fa-angle-double-right"></i>Add News</a></li>    
+                                <li id="liManageNews" runat="server" style="display:none"><a href="/adminpanel/ManageNews.aspx"><i class="fa fa-angle-double-right"></i>Manage News</a></li>    
+                            </ul>
+                        </li>
+                         <li class="treeview" id="MainLiPrintJournal" runat="server" style="display:none">
+                            <a href="#">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                <span>Print Journal</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liPrintJournalAdd" runat="server" style="display:none"><a href="/adminpanel/printjournals/CreatePrintableJournal.aspx"><i class="fa fa-angle-double-right"></i>Add Print Journal</a></li>    
+                                <li id="liPrintJournalManage" runat="server" style="display:none"><a href="/adminpanel/printjournals/ManagePrintableJournals.aspx"><i class="fa fa-angle-double-right"></i>Manage Print Journal</a></li>    
+                                
+                            </ul>
+                        </li>
+                        <li class="treeview" id="MainliEBook" runat="server" style="display:none">
+                            <a href="#">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                <span>E-Books</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liEBookManageCat" runat="server" style="display:none"><a href="/adminpanel/ebook/ManageEbookCategories.aspx"><i class="fa fa-angle-double-right"></i>Manage E-Book Categories</a></li>    
+                                <li id="liEBookAdd" runat="server" style="display:none"><a href="/adminpanel/ebook/AddBook.aspx"><i class="fa fa-angle-double-right"></i>Add E-Book</a></li>    
+                                <li id="liEBookManage" runat="server" style="display:none"><a href="/adminpanel/ebook/ManageEBooks.aspx"><i class="fa fa-angle-double-right"></i>Manage E-Books</a></li>    
+                                
+                            </ul>
+                        </li>
+                         <li class="treeview" id="MainliNewsletter" runat="server" style="display:none">
+                            <a href="#">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                <span>Newsletters</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liNewsletterAdd" runat="server" style="display:none"><a href="/adminpanel/newsletter/AddNewsletter.aspx"><i class="fa fa-angle-double-right"></i>Add Newsletter</a></li>    
+                                <li id="liNewsletterList" runat="server" style="display:none"><a href="/adminpanel/newsletter/NewsletterList.aspx"><i class="fa fa-angle-double-right"></i>Newsletters List</a></li>    
+                                
+                                
+                            </ul>
+                        </li>
+                        <li class="treeview" id="MainliLogs" runat="server" style="display:none">
+                            <a href="#">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                <span>Logs</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liFrontEndActivity" runat="server" style="display:none"><a href="/adminpanel/FrontEndActivityLogs.aspx"><i class="fa fa-angle-double-right"></i>Front-End Activity Logs</a></li>    
+                                <li id="liBackEndActivity" runat="server" style="display:none"><a href="/adminpanel/BackendActivityLog.aspx"><i class="fa fa-angle-double-right"></i>Back-End Activity Logs</a></li>    
+                            </ul>
+                        </li>
+                         <li class="active">
+                            <a href="/adminpanel/ChangePassword.aspx">
+                                <i class="fa fa-dashboard"></i> <span>Change Password</span>
+                            </a>
+                        </li>
+                         <li class="active">
+                            <a href="/adminpanel/Default.aspx?parm=log">
+                                <i class="fa fa-dashboard"></i> <span>Logout</span>
+                            </a>
+                        </li>
+                       
+                      
+                        
+                        
+                        
+                      
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                 <form id="Form1" runat="server">
+                     <%--<asp:ScriptManager ID="scrptMnger" runat="server"></asp:ScriptManager>--%>
+                   <%--  <AjaxControl:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnablePageMethods="True" runat="server" AsyncPostBackTimeout="10000"
+         AsyncPostBackErrorMessage="Processing Failed...  Try Again">
+</AjaxControl:ToolkitScriptManager>--%>
+                     <AjaxControl:ToolkitScriptManager ID="toolkitm" runat="server"></AjaxControl:ToolkitScriptManager>
+                     <%--<asp:ScriptManager ID="scrpt" runat="server"></asp:ScriptManager>--%>
+
+                     <%--<AjaxControl:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></AjaxControl:ToolkitScriptManager>--%>
+                    <asp:ContentPlaceHolder ID="cntplc" runat="server"></asp:ContentPlaceHolder>
+            
+               
+               
+                             </form>
+                
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+
+        <!-- add new calendar event modal -->
+
+
+        <!-- jQuery 2.0.2 -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <!-- jQuery UI 1.10.3 -->
+        <script src="/adminpanel/media/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+        <!-- Bootstrap -->
+        <script src="/adminpanel/media/js/bootstrap.min.js" type="text/javascript"></script>
+        <!-- Morris.js charts -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="/adminpanel/media/js/plugins/morris/morris.min.js" type="text/javascript"></script>
+        <!-- Sparkline -->
+        <script src="/adminpanel/media/js/plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
+        <!-- jvectormap -->
+        <script src="/adminpanel/media/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
+        <script src="/adminpanel/media/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
+        <!-- fullCalendar -->
+        <script src="/adminpanel/media/js/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+        <!-- jQuery Knob Chart -->
+        <script src="/adminpanel/media/js/plugins/jqueryKnob/jquery.knob.js" type="text/javascript"></script>
+        <!-- daterangepicker -->
+        <script src="/adminpanel/media/js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+        <!-- Bootstrap WYSIHTML5 -->
+        <script src="/adminpanel/media/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+        <!-- iCheck -->
+        <script src="/adminpanel/media/js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+
+        <!-- AdminLTE App -->
+        <script src="/adminpanel/media/js/AdminLTE/app.js" type="text/javascript"></script>
+        
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="/adminpanel/media/js/AdminLTE/dashboard.js" type="text/javascript"></script>     
+        
+        <!-- AdminLTE for demo purposes -->
+        <script src="/adminpanel/media/js/AdminLTE/demo.js" type="text/javascript"></script>
+
+
+         
+  <script src="/adminpanel/media/chosen/chosen.jquery.js" type="text/javascript"></script>
+  <script src="/adminpanel/media/chosen/prism.js" type="text/javascript" charset="utf-8"></script>
+        
+   
+    <script src="http://demo.gridlight-design.co.uk/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('editor1', {
+            customConfig: 'custom_config.js'
+        });
+    </script>
+
+        
+  <script type="text/javascript">
+      var config = {
+          '.chosen-select': {},
+          '.chosen-select-deselect': { allow_single_deselect: true },
+          '.chosen-select-no-single': { disable_search_threshold: 10 },
+          '.chosen-select-no-results': { no_results_text: 'Oops, nothing found!' },
+          '.chosen-select-width': { width: "95%" }
+      }
+      for (var selector in config) {
+          $(selector).chosen(config[selector]);
+      }
+
+      var prm = Sys.WebForms.PageRequestManager.getInstance();
+      if (prm != null) {
+          prm.add_endRequest(function (sender, e) {
+              if (sender._postBackSettings.panelsToUpdate != null) {
+
+                  for (var selector in config) {
+                      $(selector).chosen(config[selector]);
+                  }
+
+              }
+          });
+      };
+  </script>
+    </body>
+</html>
+

@@ -1,0 +1,4 @@
+------------------------------------3/20/2018 10:13:56 PM-------------------
+The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters. 
+------------------------------------3/20/2018 10:14:42 PM-------------------
+The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters. 

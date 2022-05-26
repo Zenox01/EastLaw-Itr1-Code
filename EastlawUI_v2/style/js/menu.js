@@ -1,0 +1,1 @@
+﻿    $(".menu-item-has-children").mouseleave(function(){ $(".dropdown").removeClass("open"); });

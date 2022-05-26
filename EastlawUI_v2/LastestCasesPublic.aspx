@@ -1,0 +1,325 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LastestCasesPublic.aspx.cs" Inherits="EastlawUI_v2.LastestCasesPublic"
+    MasterPageFile="~/Withoutlogin.Master" %>
+
+
+    <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+<%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
+<asp:Content ID="Content1" runat="server" contentplaceholderid="cntPlc">
+     <link href="/style/css/accordian.css" rel="stylesheet" type="text/css" />
+    <link href="/style/css/search-table.css" rel="stylesheet" type="text/css" />
+    <link href="/style/css/scroll.css" rel="stylesheet" type="text/css" />
+    <link href="/style/css/tabs.css" rel="stylesheet" type="text/css" />
+    <link href="/style/css/site.css" rel="stylesheet" type="text/css" />
+    <link href="/style/css/back-top.css" rel="stylesheet" type="text/css" />
+    <link href="/style/css/afterlogin.css" rel="stylesheet" type="text/css" />
+
+    
+
+<link href="/style/css/search-table.css" rel="stylesheet" type="text/css" />
+<link href="/style/css/scroll.css" rel="stylesheet" type="text/css" />
+<link href="/style/css/breadcrums.css" rel="stylesheet" type="text/css" />
+<link href="/style/css/back-top.css" rel="stylesheet" type="text/css" />
+<link href="/style/css/search.css" rel="stylesheet" type="text/css" />
+    <link href="/style/css/responsive.css" rel="stylesheet" type="text/css" />
+        
+  
+    <style>
+        @media (max-width: 768px){
+ .table-filter tr td:first-child {
+
+display: inline !important;  
+
+}
+ .table-filter .media .title span {
+
+float: left !important;
+    display: block;
+    width: 100%;
+
+}
+.judgement-date{
+margin-left: 14px; 
+}
+
+
+}
+        .line1{
+
+    padding: 4px;
+    border-radius: 1px;
+    width: 100%;
+    float: left;
+    margin-bottom: 7px;
+    font-size: 9pt; 
+    border: 1px solid rgb(231, 20, 20);
+
+
+}
+
+.line1 span {
+    vertical-align: 300%;
+    font-size: 20px;
+    background: white;
+    border: 1px solid black;
+}
+    </style>
+    
+    <asp:UpdatePanel ID="uppnl" runat="server">
+        <ContentTemplate>
+    <div class="container">
+<div class="row breadcrum">
+
+<ul class="bc">
+    <li><a href="/" class="first">Home</a></li>
+ 
+    <li><a href="#" class="current"> Lastest Cases</a></li>
+    <li class="current" id="lblCurCrumb" runat="server"></li>
+   
+</ul>
+  </div>
+</div>
+
+    <div class="container">
+    <div class="row">
+    
+    <!------------ Search Tabs Section ------------->
+    
+    	
+   <div class="heading_style" style="display:none">
+            
+            	<h3>Search Result of <i style="color:#c4161c;"><asp:Label ID="lblSearchWords" runat="server" ForeColor="#D11515"></asp:Label></i></h3>
+            
+            </div>
+    
+    <!-------------- Left Side --------------->
+    <div class="col-lg-3 col-md-3">
+    
+    
+    	<h4 class="my_h4" style="display:none">Results : <b><asp:Label ID="lblCount" runat="server"></asp:Label></b></h4>
+    
+    	
+  <div class="clearfix"></div>
+  
+  
+  
+  
+  <div class="panel-group wrap" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel">
+        <div class="panel-heading" role="tab" id="headingOne">
+          <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <i class="fa fa-gavel" aria-hidden="true" style="display:inline-block;"></i>
+          <p class="sr_head">Court</p>
+        </a>
+              <h4></h4>
+              <h4></h4>
+      </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body panel-body2">
+          <div class="scrollbar" id="style-2" style="height:173px;">
+              <asp:CheckBoxList ID="chkCourtLst"  class="force-overflow" runat="server" OnSelectedIndexChanged="chkCourtLst_SelectedIndexChanged" AutoPostBack="true" ></asp:CheckBoxList>
+      
+
+          </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+      
+      <!-- end of panel -->
+      
+      
+      
+
+      </div>
+      </div>
+
+      
+    <!-------------- Left Side End --------------->
+    
+    
+    
+    <!-------------- right Side --------------->
+    <div class="col-lg-9 col-md-9 margin_bot_20">
+    
+    <div class="row">
+    <div class="style0" style="display:none">
+    	<div class="pull-left topper" >
+                        <%--<input class="form-control text_field4" placeholder="Search Within..." name="srch-term" id="srch-term" type="text">--%>
+            <asp:TextBox ID="txtSearchWithinResult" runat="server" class="form-control text_field4" placeholder="Search Within..." AutoPostBack="true" OnTextChanged="txtSearchWithinResult_TextChanged"></asp:TextBox>
+                        <div class="input-group-btn">
+                        <%--    <button class="btn btn-default btn_height" type="submit"><i class="fa fa-search"></i></button>--%>
+                            <asp:Button ID="btnSearchWithinResult" runat="server" class="btn btn-default btn_height" Text="Search" OnClick="btnSearchWithinResult_Click" />
+                        </div>
+                    </div>
+                    
+                  <div class="pull-right" style="display:none">
+                   <telerik:radbutton RenderMode="Lightweight" ID="RadbtnAddToFolder" runat="server" Text="Add to Folder" >
+                                <Icon PrimaryIconCssClass="rbSave"></Icon>
+                            </telerik:radbutton>
+                  	<%--<button class="btn_3d"s>
+                    	<i class="fa fa-folder-open-o" aria-hidden="true"></i>
+                        Add to Folder
+                          
+                    </button>--%>
+                      <telerik:radbutton RenderMode="Lightweight" ID="RadbtnCreateFolder" runat="server" Text="Create New Folder">
+                                <Icon PrimaryIconCssClass="rbAdd"></Icon>
+                            </telerik:radbutton>
+             <%--       <button class="btn_3d">
+                    	<i class="fa fa-plus" aria-hidden="true"></i>
+                        Create New Folder
+                    </button>--%>
+                  
+                  </div>  
+    </div>
+    </div>
+    
+    <div class="clearfix"></div>
+    <div id="divNoResult" runat="server" style="display:none" >
+                    <div style="width:80%;float:left">
+                        <h3 style="color:#D11515">No documents satisfy your query.</h3>
+                    <p>You may want to <span style="color:#D11515">Edit</span> your Search By 
+                    </p>
+                    <p>inserting <span style="color:red"><b>“ “</b></span> to search the exact phrase within a document; <span style="color:red"><b>OR</b></span> <br />
+                        inserting  <span style="color:red"><b>AND</b></span> between your terms to find them anywhere in the same document; <span style="color:red"><b>OR</b></span><br />
+                        by inserting  <span style="color:red"><b>OR</b></span> between your terms to find combination of two keywords existing together or separately.
+                    </p>
+                   
+                    </div>
+                    <div style="width:80%;float:right;">
+                         <asp:Button ID="btnPopup" runat="server" Text="Report Missing Citations"  CssClass="btnstyle" Width="200"/>
+                      <%--  <cc1:modalpopupextender ID="ModalPopupExtender1" BackgroundCssClass="modalBackground" PopupControlID="Panel1" TargetControlID="btnPopup" runat="server">
+    </cc1:modalpopupextender>--%>
+                         <asp:Panel ID="Panel1" runat="server">
+    <div class="PopUpWindow">
+        <table style="width:100%">
+            <tr>
+                <td>Enter Ciations/keywords: </td>
+                <td><asp:TextBox ID="txtComment" runat="server" TextMode="MultiLine" Width="300" Height="100"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvComment" runat="server" ControlToValidate="txtComment" ErrorMessage="*"
+            ValidationGroup="AA"></asp:RequiredFieldValidator></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="text-align:right">
+                    <asp:Button  ID="btnClose" runat="server" Text="Close" CausesValidation="false"   CssClass="btnstyle"  Width="130"/>&nbsp; 
+                    <asp:Button  ID="btnFill" runat="server" Text="Send Report" ValidationGroup="AA"  CssClass="btnstyle"  Width="130"/></td>
+            </tr>
+        </table>
+    
+        <br />
+  
+   
+   
+  </div>
+    </asp:Panel>
+                        </div>
+                    
+                </div>
+    
+          <div id="divResult" runat="server">
+               <div class="table-container">
+              <asp:GridView ID="gvLst" runat="server" AutoGenerateColumns="false" Width="100%" CssClass="table table-filter"
+                     GridLines="None" AllowPaging="true" AllowCustomPaging="false" PageSize="20" OnPageIndexChanging="gvLst_PageIndexChanging">
+                    <%--<PagerSettings Mode="NextPreviousFirstLast" FirstPageText="First" LastPageText="Last" NextPageText="Next" PreviousPageText="Previous" />--%>
+                    <pagersettings mode="NumericFirstLast"
+            firstpagetext="First"
+            lastpagetext="Last"
+            nextpagetext="Next"
+            previouspagetext="Prev"  
+            position="TopAndBottom" />
+                    <pagerstyle cssclass="gridview" >
+
+</pagerstyle>
+                    <Columns>
+                   
+                       
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <div class="media">
+												
+												<div class="media-body">
+													
+													<a href='<%# "/cases/" +  clsUtilities.RemoveSpecialCharacter(EastlawUI_v2.CommonClass.GetWords(Eval("Appeallant").ToString(),3).ToString()).Replace(" ","-")+"VS"+clsUtilities.RemoveSpecialCharacter(EastlawUI_v2.CommonClass.GetWords(Eval("Respondent").ToString(),3).ToString()).Replace(" ","-")+"."+ EncryptDecryptHelper.Encrypt(Eval("CaseID").ToString()) %>'><h4 class="title">
+														<%# EastlawUI_v2.CommonClass.MakeFirstCap((string)Eval("Appeallant")) %> VS <%# EastlawUI_v2.CommonClass.MakeFirstCap((string)Eval("Respondent")) %> <span class="pull-right">[ <%# Eval("Court") %> ] </span>
+														
+													</h4>
+                                                    </a>
+                                                    <div class="row details_data">
+                                                    <div class="col-lg-7 col-md-7" style="padding-left:0;">
+                                                    <p class="pull-left"><strong>Where Reported : </strong> <%# Eval("Citation") %></p>
+                                                    </div>
+                                                    <div class="col-lg-5 col-md-5">
+                                                    <p class="judgement-date    "><strong>Dated : </strong><%#Eval("JDate","{0:dd/MMM/yyyy}")%> </p>
+                                                    </div>
+                                                    </div>
+                                              
+                                                    <br />
+                                                    <p class="pull-left"><strong>Tagged Statutes : </strong> <%# Eval("CaseTaggedStatutes") %></p>
+
+
+                                                  
+                                               
+                                                    	
+                                                          <div style="background-color: #f1e9e9;">
+                        
+                   <%# Eval("CaseSummary") %>
+                    </div>
+                                                    
+                                                   
+													<%--<p class="summary">--%>
+                                                    <br />
+                                                   <%-- <%# Eval("Desc") %>--%>
+                                                       
+                                                        <br />
+                                                        <span class="media-meta pull-right">
+                                                        <a href='<%# "/cases/" +  clsUtilities.RemoveSpecialCharacter(EastlawUI_v2.CommonClass.GetWords(Eval("Appeallant").ToString(),3).ToString()).Replace(" ","-")+"VS"+clsUtilities.RemoveSpecialCharacter(EastlawUI_v2.CommonClass.GetWords(Eval("Respondent").ToString(),3).ToString()).Replace(" ","-")+"."+ EncryptDecryptHelper.Encrypt(Eval("CaseID").ToString()) %>'>View Full ...</a></span>
+												</div>
+											</div>
+
+                             <asp:HiddenField ID="hdID" runat="server" Value='<%# Eval("CaseID") %>' />
+                            <asp:HiddenField ID="hdSummary" runat="server" Value='<%# Eval("CaseSummary") %>' />
+                                <%--<asp:HiddenField ID="hdResultType" runat="server" Value='<%# Eval("ResultType") %>' />--%>
+     
+                             
+               
+                               
+                                </ItemTemplate>
+                        </asp:TemplateField>
+                      
+                    </Columns>
+                </asp:GridView>
+                   </div>
+              </div>
+       
+  
+    
+    
+    </div>
+    <!-------------- right Side End --------------->
+    
+    
+     
+    	
+    </div>  
+    </div>
+               <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="uppnl">
+                    <ProgressTemplate>
+                     
+                           <div class="modal1">
+        <div class="center1">
+           <img alt="" src="/style/img/ajax_loader_big.gif" />
+        </div>
+    </div>
+                                
+                           
+                      
+                    </ProgressTemplate>
+                </asp:UpdateProgress>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</asp:Content>
+
+

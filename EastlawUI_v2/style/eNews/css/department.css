@@ -1,0 +1,76 @@
+.carousel-indicators {
+    bottom:-40px;
+	left:0;
+	width:100%;
+	background:#ccc;
+	padding: 6px 0px;
+	margin-left:0;
+	border-top:2px solid #fff;
+}
+.carousel-indicators li {
+	width:12px;
+	height:12px;	
+	background:#fff;
+	border-color:#fff;
+ 
+}
+.carousel-indicators .active {
+	width:14px;
+	height:14px;
+	background:#428bca;
+	border-color:#428bca;
+}
+.carousel-inner .thumbnail {
+	margin-bottom:0;
+	border-bottom-left-radius:0;
+	border-bottom-right-radius:0;
+}
+.carousel-inner .caption {
+	background:#ddd;
+	padding: 10px;
+}
+
+
+
+.navbar
+{transition: all linear 0.5s;
+background: #fff;
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img
+{height:220px;
+width:100%;}
+
+.caption h4
+{font-weight:bold;}
+
+.top_nav a:hover
+{text-decoration:none;}
+
+.tab-content
+{background:url(img/search_tabs.png) no-repeat center left 20px #2f3a41;}
+
+.inner .form-control
+{width:32%;
+float:left;
+padding-top:0;
+padding-bottom:0;
+height:27px;}
+
+.heading_style ul{margin:0;display: inline-block;}
+
+.heading_style ul li{float:left;padding:8px 6px;}
+
+.heading_style ul li a{color:#000;    font-size: 18px;
+    margin: 0 6px;}
+	
+.heading_style ul li:hover{    border: none;
+    color: #eb1b33 !important;
+    background: transparent;
+    background: linear-gradient(#e4e4e4,#fff);}
+	.active3{    border: none !important;
+    color: #eb1b33 !important;
+    background: transparent;
+    background: linear-gradient(#e4e4e4,#fff) !important;}
+
+.heading_style ul li a:hover{text-decoration:none;}
+.sr_head{font-size:15px;}

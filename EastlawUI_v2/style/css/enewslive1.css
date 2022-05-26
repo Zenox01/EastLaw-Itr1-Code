@@ -1,0 +1,11 @@
+.navbar
+{transition: all linear 0.5s;
+background: #fff;
+}
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img {
+    line-height: 1;
+    width: 760px;
+    height: 400px;
+}
+

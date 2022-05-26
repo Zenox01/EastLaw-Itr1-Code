@@ -1,0 +1,3067 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\netcoreapp3.0\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\netcoreapp3.0\EntityFramework.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E716B70-F745-4593-8769-A05B77C9865E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EastlawUI_v2</RootNamespace>
+    <AssemblyName>EastlawUI_v2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxMin, Version=5.14.5506.26196, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxMin.5.14.5506.26202\lib\net40\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.69.1.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DropDownChosen, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DropDownChosen.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GemBox.Document, Version=27.3.30.1192, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\GemBox.Document.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.12.0.0\lib\net11\Microsoft.Office.Interop.Word.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.Doc, Version=5.5.0.54020, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Spire.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.5.20, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=3.4.108.54020, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.Designer, Version=1.0.98.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SQLite.Designer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.114.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\lib\net45\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.114.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.114.0\lib\net45\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.114.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.114.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Web.UI, Version=2015.2.826.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ActivateUser.aspx" />
+    <Content Include="adminpanel\AddCaseUpdateHistory.aspx" />
+    <Content Include="adminpanel\AddCompany.aspx" />
+    <Content Include="adminpanel\AddDepartment.aspx" />
+    <Content Include="adminpanel\AddEditCourts.aspx" />
+    <Content Include="adminpanel\AddGeneralAreas.aspx" />
+    <Content Include="adminpanel\AddGlossary.aspx" />
+    <Content Include="adminpanel\AddNews.aspx" />
+    <Content Include="adminpanel\AddStatute.aspx" />
+    <Content Include="adminpanel\CRMUserExpiry.aspx" />
+    <Content Include="adminpanel\managecourtappealmastr.aspx" />
+    <Content Include="adminpanel\ManageCourtHierarchy.aspx" />
+    <Content Include="adminpanel\newsletter\AddUsers.aspx" />
+    <Content Include="adminpanel\AdminGeneral.aspx" />
+    <Content Include="adminpanel\AdminMain.aspx" />
+    <Content Include="adminpanel\AdminUsers.aspx" />
+    <Content Include="adminpanel\BackendActivityLog.aspx" />
+    <Content Include="adminpanel\CasesMigrationList.aspx" />
+    <Content Include="adminpanel\CasesReport.aspx" />
+    <Content Include="adminpanel\ChangePassword.aspx" />
+    <Content Include="adminpanel\CitationDetailedReview.aspx" />
+    <Content Include="adminpanel\CRMUserView.aspx" />
+    <Content Include="adminpanel\Default.aspx" />
+    <Content Include="adminpanel\DeleteCasesByFiles.aspx" />
+    <Content Include="adminpanel\ebook\AddBook.aspx" />
+    <Content Include="adminpanel\ebook\ManageEbookCategories.aspx" />
+    <Content Include="adminpanel\ebook\ManageEBookIndexes.aspx" />
+    <Content Include="adminpanel\ebook\ManageEBooks.aspx" />
+    <Content Include="adminpanel\ebook\viewebookdata.aspx" />
+    <Content Include="adminpanel\FrontEndActivityLogs.aspx" />
+    <Content Include="adminpanel\GeneralSearch.aspx" />
+    <Content Include="adminpanel\GenerateCaseExcel.aspx" />
+    <Content Include="adminpanel\GenerateUserOrder.aspx" />
+    <Content Include="adminpanel\JudgeMergePanel.aspx" />
+    <Content Include="adminpanel\ManageAdvocates.aspx" />
+    <Content Include="adminpanel\ManageCitationVariations.aspx" />
+    <Content Include="adminpanel\ManageCMSPages.aspx" />
+    <Content Include="adminpanel\ManageCompanies.aspx" />
+    <Content Include="adminpanel\ManageCourts.aspx" />
+    <Content Include="adminpanel\ManageCourtsMaster.aspx" />
+    <Content Include="adminpanel\ManageDepartmentFile.aspx" />
+    <Content Include="adminpanel\ManageDepartments.aspx" />
+    <Content Include="adminpanel\ManageDictionary.aspx" />
+    <Content Include="adminpanel\ManageGeneralAreas.aspx" />
+    <Content Include="adminpanel\ManageGlossaryList.aspx" />
+    <Content Include="adminpanel\ManageJournals.aspx" />
+    <Content Include="adminpanel\ManageJudges.aspx" />
+    <Content Include="adminpanel\ManageKeywords.aspx" />
+    <Content Include="adminpanel\ManageLegalMaxim.aspx" />
+    <Content Include="adminpanel\ManageNews.aspx" />
+    <Content Include="adminpanel\ManagePlans.aspx" />
+    <Content Include="adminpanel\ManagePracticeCategories.aspx" />
+    <Content Include="adminpanel\ManagePracticeSubCategories.aspx" />
+    <Content Include="adminpanel\ManageStatutesIndex.aspx" />
+    <Content Include="adminpanel\ManageUserPlanUpdate.aspx" />
+    <Content Include="adminpanel\ManageUsers.aspx" />
+    <Content Include="adminpanel\ManageWebScapStatutes.aspx" />
+    <Content Include="adminpanel\media\chosen\chosen.css" />
+    <Content Include="adminpanel\media\chosen\chosen.jquery.js" />
+    <Content Include="adminpanel\media\chosen\chosen.jquery.min.js" />
+    <Content Include="adminpanel\media\chosen\chosen.min.css" />
+    <Content Include="adminpanel\media\chosen\chosen.proto.js" />
+    <Content Include="adminpanel\media\chosen\chosen.proto.min.js" />
+    <Content Include="adminpanel\media\chosen\prism.css" />
+    <Content Include="adminpanel\media\chosen\prism.js" />
+    <Content Include="adminpanel\media\chosen\style.css" />
+    <Content Include="adminpanel\media\css\AdminLTE.css" />
+    <Content Include="adminpanel\media\css\aui-production.min.css" />
+    <Content Include="adminpanel\media\css\bootstrap-slider\slider.css" />
+    <Content Include="adminpanel\media\css\bootstrap-wysihtml5\bootstrap3-wysihtml5.css" />
+    <Content Include="adminpanel\media\css\bootstrap-wysihtml5\bootstrap3-wysihtml5.min.css" />
+    <Content Include="adminpanel\media\css\bootstrap.css" />
+    <Content Include="adminpanel\media\css\bootstrap.min.css" />
+    <Content Include="adminpanel\media\css\colorpicker\bootstrap-colorpicker.css" />
+    <Content Include="adminpanel\media\css\colorpicker\bootstrap-colorpicker.min.css" />
+    <Content Include="adminpanel\media\css\datatables\dataTables.bootstrap.css" />
+    <Content Include="adminpanel\media\css\datatables\images\sort_asc.png" />
+    <Content Include="adminpanel\media\css\datatables\images\sort_asc_disabled.png" />
+    <Content Include="adminpanel\media\css\datatables\images\sort_both.png" />
+    <Content Include="adminpanel\media\css\datatables\images\sort_desc.png" />
+    <Content Include="adminpanel\media\css\datatables\images\sort_desc_disabled.png" />
+    <Content Include="adminpanel\media\css\daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="adminpanel\media\css\font-awesome.css" />
+    <Content Include="adminpanel\media\css\font-awesome.min.css" />
+    <Content Include="adminpanel\media\css\fullcalendar\fullcalendar.css" />
+    <Content Include="adminpanel\media\css\fullcalendar\fullcalendar.print.css" />
+    <Content Include="adminpanel\media\css\iCheck\all.css" />
+    <Content Include="adminpanel\media\css\iCheck\flat\aero%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\aero.css" />
+    <Content Include="adminpanel\media\css\iCheck\flat\aero.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\blue%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\blue.css" />
+    <Content Include="adminpanel\media\css\iCheck\flat\blue.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\flat%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\flat.css" />
+    <Content Include="adminpanel\media\css\iCheck\flat\flat.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\green%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\green.css" />
+    <Content Include="adminpanel\media\css\iCheck\flat\green.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\grey%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\grey.css" />
+    <Content Include="adminpanel\media\css\iCheck\flat\grey.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\orange%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\orange.css" />
+    <Content Include="adminpanel\media\css\iCheck\flat\orange.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\pink%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\pink.css" />
+    <Content Include="adminpanel\media\css\iCheck\flat\pink.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\purple%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\purple.css" />
+    <Content Include="adminpanel\media\css\iCheck\flat\purple.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\red%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\red.css" />
+    <Content Include="adminpanel\media\css\iCheck\flat\red.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\yellow%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\yellow.css" />
+    <Content Include="adminpanel\media\css\iCheck\flat\yellow.png" />
+    <Content Include="adminpanel\media\css\iCheck\flat\_all.css" />
+    <Content Include="adminpanel\media\css\iCheck\futurico\futurico%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\futurico\futurico.css" />
+    <Content Include="adminpanel\media\css\iCheck\futurico\futurico.png" />
+    <Content Include="adminpanel\media\css\iCheck\line\aero.css" />
+    <Content Include="adminpanel\media\css\iCheck\line\blue.css" />
+    <Content Include="adminpanel\media\css\iCheck\line\green.css" />
+    <Content Include="adminpanel\media\css\iCheck\line\grey.css" />
+    <Content Include="adminpanel\media\css\iCheck\line\line%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\line\line.css" />
+    <Content Include="adminpanel\media\css\iCheck\line\line.png" />
+    <Content Include="adminpanel\media\css\iCheck\line\orange.css" />
+    <Content Include="adminpanel\media\css\iCheck\line\pink.css" />
+    <Content Include="adminpanel\media\css\iCheck\line\purple.css" />
+    <Content Include="adminpanel\media\css\iCheck\line\red.css" />
+    <Content Include="adminpanel\media\css\iCheck\line\yellow.css" />
+    <Content Include="adminpanel\media\css\iCheck\line\_all.css" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\aero%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\aero.css" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\aero.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\blue%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\blue.css" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\blue.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\green%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\green.css" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\green.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\grey%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\grey.css" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\grey.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\minimal%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\minimal.css" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\minimal.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\orange%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\orange.css" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\orange.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\pink%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\pink.css" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\pink.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\purple%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\purple.css" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\purple.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\red%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\red.css" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\red.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\yellow%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\yellow.css" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\yellow.png" />
+    <Content Include="adminpanel\media\css\iCheck\minimal\_all.css" />
+    <Content Include="adminpanel\media\css\iCheck\polaris\polaris%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\polaris\polaris.css" />
+    <Content Include="adminpanel\media\css\iCheck\polaris\polaris.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\aero%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\aero.css" />
+    <Content Include="adminpanel\media\css\iCheck\square\aero.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\blue%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\blue.css" />
+    <Content Include="adminpanel\media\css\iCheck\square\blue.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\green%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\green.css" />
+    <Content Include="adminpanel\media\css\iCheck\square\green.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\grey%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\grey.css" />
+    <Content Include="adminpanel\media\css\iCheck\square\grey.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\orange%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\orange.css" />
+    <Content Include="adminpanel\media\css\iCheck\square\orange.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\pink%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\pink.css" />
+    <Content Include="adminpanel\media\css\iCheck\square\pink.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\purple%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\purple.css" />
+    <Content Include="adminpanel\media\css\iCheck\square\purple.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\red%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\red.css" />
+    <Content Include="adminpanel\media\css\iCheck\square\red.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\square%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\square.css" />
+    <Content Include="adminpanel\media\css\iCheck\square\square.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\yellow%402x.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\yellow.css" />
+    <Content Include="adminpanel\media\css\iCheck\square\yellow.png" />
+    <Content Include="adminpanel\media\css\iCheck\square\_all.css" />
+    <Content Include="adminpanel\media\css\images\animated-overlay.gif" />
+    <Content Include="adminpanel\media\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="adminpanel\media\css\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="adminpanel\media\css\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="adminpanel\media\css\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="adminpanel\media\css\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="adminpanel\media\css\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="adminpanel\media\css\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="adminpanel\media\css\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="adminpanel\media\css\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="adminpanel\media\css\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="adminpanel\media\css\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="adminpanel\media\css\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="adminpanel\media\css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="adminpanel\media\css\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="adminpanel\media\css\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="adminpanel\media\css\ionicons.css" />
+    <Content Include="adminpanel\media\css\ionicons.min.css" />
+    <Content Include="adminpanel\media\css\ionslider\ion.rangeSlider.css" />
+    <Content Include="adminpanel\media\css\ionslider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="adminpanel\media\css\ionslider\ion.rangeSlider.skinNice.css" />
+    <Content Include="adminpanel\media\css\jQueryUI\images\animated-overlay.gif" />
+    <Content Include="adminpanel\media\css\jQueryUI\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="adminpanel\media\css\jQueryUI\images\ui-bg_flat_100_e6e7e8_40x100.png" />
+    <Content Include="adminpanel\media\css\jQueryUI\images\ui-bg_flat_100_f56954_40x100.png" />
+    <Content Include="adminpanel\media\css\jQueryUI\images\ui-bg_flat_55_f39c12_40x100.png" />
+    <Content Include="adminpanel\media\css\jQueryUI\images\ui-bg_flat_65_ffffff_40x100.png" />
+    <Content Include="adminpanel\media\css\jQueryUI\images\ui-bg_flat_75_dadada_40x100.png" />
+    <Content Include="adminpanel\media\css\jQueryUI\images\ui-bg_flat_75_e6e6e6_40x100.png" />
+    <Content Include="adminpanel\media\css\jQueryUI\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="adminpanel\media\css\jQueryUI\images\ui-icons_222222_256x240.png" />
+    <Content Include="adminpanel\media\css\jQueryUI\images\ui-icons_454545_256x240.png" />
+    <Content Include="adminpanel\media\css\jQueryUI\images\ui-icons_888888_256x240.png" />
+    <Content Include="adminpanel\media\css\jQueryUI\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="adminpanel\media\css\jQueryUI\jquery-ui-1.10.3.custom.css" />
+    <Content Include="adminpanel\media\css\jQueryUI\jquery-ui-1.10.3.custom.min.css" />
+    <Content Include="adminpanel\media\css\jvectormap\jquery-jvectormap-1.2.2.css" />
+    <Content Include="adminpanel\media\css\morris\morris.css" />
+    <Content Include="adminpanel\media\css\timepicker\bootstrap-timepicker.css" />
+    <Content Include="adminpanel\media\css\timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="adminpanel\media\fonts\fontawesome-webfont.svg" />
+    <Content Include="adminpanel\media\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="adminpanel\media\fonts\ionicons.svg" />
+    <Content Include="adminpanel\media\img\ajax-loader.gif" />
+    <Content Include="adminpanel\media\img\ajax-loader1.gif" />
+    <Content Include="adminpanel\media\img\avatar.png" />
+    <Content Include="adminpanel\media\img\avatar04.png" />
+    <Content Include="adminpanel\media\img\avatar2.png" />
+    <Content Include="adminpanel\media\img\avatar3.png" />
+    <Content Include="adminpanel\media\img\avatar5.png" />
+    <Content Include="adminpanel\media\img\blur-background04.jpg" />
+    <Content Include="adminpanel\media\img\blur-background08.jpg" />
+    <Content Include="adminpanel\media\img\blur-background09.jpg" />
+    <Content Include="adminpanel\media\img\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="adminpanel\media\img\bootstrap-colorpicker\alpha.png" />
+    <Content Include="adminpanel\media\img\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="adminpanel\media\img\bootstrap-colorpicker\hue.png" />
+    <Content Include="adminpanel\media\img\bootstrap-colorpicker\saturation.png" />
+    <Content Include="adminpanel\media\img\credit\american-express.png" />
+    <Content Include="adminpanel\media\img\credit\cirrus.png" />
+    <Content Include="adminpanel\media\img\credit\mastercard.png" />
+    <Content Include="adminpanel\media\img\credit\mestro.png" />
+    <Content Include="adminpanel\media\img\credit\paypal.png" />
+    <Content Include="adminpanel\media\img\credit\paypal2.png" />
+    <Content Include="adminpanel\media\img\credit\visa.png" />
+    <Content Include="adminpanel\media\img\Delete.png" />
+    <Content Include="adminpanel\media\img\edit.png" />
+    <Content Include="adminpanel\media\img\icons.png" />
+    <Content Include="adminpanel\media\img\sprite-skin-flat.png" />
+    <Content Include="adminpanel\media\img\sprite-skin-nice.png" />
+    <Content Include="adminpanel\media\img\user-bg.png" />
+    <Content Include="adminpanel\media\img\user.jpg" />
+    <Content Include="adminpanel\media\img\user2.jpg" />
+    <Content Include="adminpanel\media\img\view_sort_ascending.png" />
+    <Content Include="adminpanel\media\img\view_sort_descending.png" />
+    <Content Include="adminpanel\media\js\AdminLTE\app.js" />
+    <Content Include="adminpanel\media\js\AdminLTE\dashboard.js" />
+    <Content Include="adminpanel\media\js\AdminLTE\demo.js" />
+    <Content Include="adminpanel\media\js\aui-production.min.js" />
+    <Content Include="adminpanel\media\js\bootstrap.js" />
+    <Content Include="adminpanel\media\js\bootstrap.min.js" />
+    <Content Include="adminpanel\media\js\ckeditor.js" />
+    <Content Include="adminpanel\media\js\jquery-ui-1.10.3.js" />
+    <Content Include="adminpanel\media\js\jquery-ui-1.10.3.min.js" />
+    <Content Include="adminpanel\media\js\jquery.min.js" />
+    <Content Include="adminpanel\media\js\plugins\bootstrap-slider\bootstrap-slider.js" />
+    <Content Include="adminpanel\media\js\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.min.js" />
+    <Content Include="adminpanel\media\js\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\adapters\jquery.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\build-config.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\ckeditor.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\config.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\contents.css" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\af.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\ar.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\bg.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\bn.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\bs.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\ca.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\cs.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\cy.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\da.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\de.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\el.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\en-au.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\en-ca.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\en-gb.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\en.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\eo.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\es.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\et.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\eu.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\fa.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\fi.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\fo.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\fr-ca.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\fr.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\gl.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\gu.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\he.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\hi.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\hr.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\hu.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\id.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\is.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\it.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\ja.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\ka.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\km.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\ko.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\ku.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\lt.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\lv.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\mk.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\mn.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\ms.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\nb.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\nl.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\no.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\pl.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\pt-br.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\pt.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\ro.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\ru.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\si.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\sk.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\sl.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\sq.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\sr-latn.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\sr.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\sv.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\th.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\tr.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\ug.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\uk.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\vi.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\zh-cn.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\lang\zh.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\fakeobjects\images\spacer.gif" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\icons.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\wsc\dialogs\tmp.html" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\dialog.css" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\dialog_opera.css" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\editor.css" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\icons.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\icons_hidpi.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\images\close.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\images\lock-open.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\images\lock.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\images\refresh.png" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\styles.js" />
+    <Content Include="adminpanel\media\js\plugins\colorpicker\bootstrap-colorpicker.js" />
+    <Content Include="adminpanel\media\js\plugins\colorpicker\bootstrap-colorpicker.min.js" />
+    <Content Include="adminpanel\media\js\plugins\datatables\dataTables.bootstrap.js" />
+    <Content Include="adminpanel\media\js\plugins\datatables\jquery.dataTables.js" />
+    <Content Include="adminpanel\media\js\plugins\daterangepicker\daterangepicker.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\excanvas.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\excanvas.min.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.colorhelpers.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.colorhelpers.min.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.canvas.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.canvas.min.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.categories.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.categories.min.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.crosshair.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.errorbars.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.errorbars.min.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.fillbetween.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.fillbetween.min.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.image.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.image.min.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.min.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.navigate.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.navigate.min.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.pie.min.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.resize.min.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.selection.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.selection.min.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.stack.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.stack.min.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.symbol.min.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.threshold.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.threshold.min.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.time.js" />
+    <Content Include="adminpanel\media\js\plugins\flot\jquery.flot.time.min.js" />
+    <Content Include="adminpanel\media\js\plugins\fullcalendar\fullcalendar.js" />
+    <Content Include="adminpanel\media\js\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="adminpanel\media\js\plugins\iCheck\icheck.js" />
+    <Content Include="adminpanel\media\js\plugins\iCheck\icheck.min.js" />
+    <Content Include="adminpanel\media\js\plugins\input-mask\jquery.inputmask.date.extensions.js" />
+    <Content Include="adminpanel\media\js\plugins\input-mask\jquery.inputmask.extensions.js" />
+    <Content Include="adminpanel\media\js\plugins\input-mask\jquery.inputmask.js" />
+    <Content Include="adminpanel\media\js\plugins\input-mask\jquery.inputmask.numeric.extensions.js" />
+    <Content Include="adminpanel\media\js\plugins\input-mask\jquery.inputmask.phone.extensions.js" />
+    <Content Include="adminpanel\media\js\plugins\input-mask\jquery.inputmask.regex.extensions.js" />
+    <Content Include="adminpanel\media\js\plugins\input-mask\phone-codes\readme.txt" />
+    <Content Include="adminpanel\media\js\plugins\ionslider\ion.rangeSlider.min.js" />
+    <Content Include="adminpanel\media\js\plugins\jqueryKnob\jquery.knob.js" />
+    <Content Include="adminpanel\media\js\plugins\jvectormap\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="adminpanel\media\js\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="adminpanel\media\js\plugins\misc\html5shiv.js" />
+    <Content Include="adminpanel\media\js\plugins\misc\jquery.ba-resize.min.js" />
+    <Content Include="adminpanel\media\js\plugins\misc\jquery.placeholder.js" />
+    <Content Include="adminpanel\media\js\plugins\misc\modernizr.min.js" />
+    <Content Include="adminpanel\media\js\plugins\misc\respond.min.js" />
+    <Content Include="adminpanel\media\js\plugins\morris\morris.js" />
+    <Content Include="adminpanel\media\js\plugins\morris\morris.min.js" />
+    <Content Include="adminpanel\media\js\plugins\slimScroll\jquery.slimscroll.js" />
+    <Content Include="adminpanel\media\js\plugins\slimScroll\jquery.slimscroll.min.js" />
+    <Content Include="adminpanel\media\js\plugins\sparkline\jquery.sparkline.js" />
+    <Content Include="adminpanel\media\js\plugins\sparkline\jquery.sparkline.min.js" />
+    <Content Include="adminpanel\media\js\plugins\timepicker\bootstrap-timepicker.js" />
+    <Content Include="adminpanel\media\js\plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="adminpanel\media\select2\dist\css\select2.css" />
+    <Content Include="adminpanel\media\select2\dist\css\select2.min.css" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\ar.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\az.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\bg.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\ca.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\cs.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\da.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\de.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\el.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\en.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\es.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\et.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\eu.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\fa.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\fi.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\fr.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\gl.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\he.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\hi.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\hr.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\hu.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\id.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\is.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\it.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\ja.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\km.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\ko.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\lt.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\lv.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\mk.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\ms.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\nb.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\nl.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\pl.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\pt-BR.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\pt.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\ro.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\ru.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\sk.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\sr-Cyrl.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\sr.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\sv.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\th.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\tr.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\uk.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\vi.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\zh-CN.js" />
+    <Content Include="adminpanel\media\select2\dist\js\i18n\zh-TW.js" />
+    <Content Include="adminpanel\media\select2\dist\js\select2.full.js" />
+    <Content Include="adminpanel\media\select2\dist\js\select2.full.min.js" />
+    <Content Include="adminpanel\media\select2\dist\js\select2.js" />
+    <Content Include="adminpanel\media\select2\dist\js\select2.min.js" />
+    <Content Include="adminpanel\media\select2\docs\announcements-4.0.html" />
+    <Content Include="adminpanel\media\select2\docs\browserconfig.xml" />
+    <Content Include="adminpanel\media\select2\docs\community.html" />
+    <Content Include="adminpanel\media\select2\docs\examples.html" />
+    <Content Include="adminpanel\media\select2\docs\images\android-chrome-36x36.png" />
+    <Content Include="adminpanel\media\select2\docs\images\android-chrome-48x48.png" />
+    <Content Include="adminpanel\media\select2\docs\images\android-chrome-72x72.png" />
+    <Content Include="adminpanel\media\select2\docs\images\apple-touch-icon-57x57.png" />
+    <Content Include="adminpanel\media\select2\docs\images\apple-touch-icon-60x60.png" />
+    <Content Include="adminpanel\media\select2\docs\images\apple-touch-icon-72x72.png" />
+    <Content Include="adminpanel\media\select2\docs\images\apple-touch-icon-precomposed.png" />
+    <Content Include="adminpanel\media\select2\docs\images\apple-touch-icon.png" />
+    <Content Include="adminpanel\media\select2\docs\images\favicon-16x16.png" />
+    <Content Include="adminpanel\media\select2\docs\images\favicon-32x32.png" />
+    <Content Include="adminpanel\media\select2\docs\images\favicon.ico" />
+    <Content Include="adminpanel\media\select2\docs\images\logo.png" />
+    <Content Include="adminpanel\media\select2\docs\images\mstile-150x150.png" />
+    <Content Include="adminpanel\media\select2\docs\images\mstile-310x150.png" />
+    <Content Include="adminpanel\media\select2\docs\images\mstile-70x70.png" />
+    <Content Include="adminpanel\media\select2\docs\images\safari-pinned-tab.svg" />
+    <Content Include="adminpanel\media\select2\docs\index.html" />
+    <Content Include="adminpanel\media\select2\docs\options-old.html" />
+    <Content Include="adminpanel\media\select2\docs\options.html" />
+    <Content Include="adminpanel\media\select2\docs\vendor\fonts\fontawesome-webfont.svg" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\ak.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\al.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\ar.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\az.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\ca.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\co.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\ct.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\de.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\fl.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\ga.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\hi.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\ia.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\id.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\il.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\in.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\ks.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\ky.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\la.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\ma.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\md.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\me.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\mi.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\mn.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\mo.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\ms.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\mt.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\nc.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\nd.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\ne.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\nh.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\nj.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\nm.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\nv.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\ny.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\oh.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\ok.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\or.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\pa.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\ri.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\sc.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\sd.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\tn.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\tx.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\ut.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\va.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\vt.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\wa.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\wi.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\wv.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\images\flags\wy.png" />
+    <Content Include="adminpanel\media\select2\docs\vendor\js\anchor.min.js" />
+    <Content Include="adminpanel\media\select2\docs\vendor\js\bootstrap.min.js" />
+    <Content Include="adminpanel\media\select2\docs\vendor\js\jquery.min.js" />
+    <Content Include="adminpanel\media\select2\docs\vendor\js\placeholders.jquery.min.js" />
+    <Content Include="adminpanel\media\select2\docs\vendor\js\prettify.min.js" />
+    <Content Include="adminpanel\media\select2\docs\_includes\examples\basics.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\examples\data.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\examples\disabled-mode.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\examples\disabled-results.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\examples\hide-search.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\examples\localization-rtl-diacritics.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\examples\matcher.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\examples\multiple-max.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\examples\placeholders.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\examples\programmatic-control.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\examples\tags.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\examples\themes-templating-responsive-design.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\examples\tokenizer.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\footer.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\ga.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\head.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\js-source-states.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\navigation.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\nav\announcements-4.0.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\nav\examples.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\nav\options-old.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\nav\options.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\notice-previous.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options-old\adapters.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options-old\backwards-compatibility.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options-old\core-options.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options-old\dropdown.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options-old\events.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options-old\setting-default-options.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\compatibility.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\compatibility\initial-selection.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\compatibility\introduction.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\compatibility\matcher.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\compatibility\query-function.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\compatibility\text-input.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\core.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\core\amd-support.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\core\data-attributes.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\core\options.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\data.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\data\ajax.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\data\array.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\data\select.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\dropdown.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\dropdown\filtering.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\dropdown\placement.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\dropdown\selections.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\dropdown\tagging.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\events.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\events\internal.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\events\jquery.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\introduction.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\not-written.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\selections.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\selections\clearing-selections.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\selections\multiple.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\selections\placeholder.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\options\selections\templating.html" />
+    <Content Include="adminpanel\media\select2\docs\_includes\social-buttons.html" />
+    <Content Include="adminpanel\media\select2\docs\_layouts\default.html" />
+    <Content Include="adminpanel\media\select2\docs\_layouts\home.html" />
+    <Content Include="adminpanel\media\select2\Gruntfile.js" />
+    <Content Include="adminpanel\media\select2\src\js\banner.end.js" />
+    <Content Include="adminpanel\media\select2\src\js\banner.start.js" />
+    <Content Include="adminpanel\media\select2\src\js\jquery.mousewheel.shim.js" />
+    <Content Include="adminpanel\media\select2\src\js\jquery.select2.js" />
+    <Content Include="adminpanel\media\select2\src\js\jquery.shim.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\compat\containerCss.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\compat\dropdownCss.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\compat\initSelection.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\compat\inputData.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\compat\matcher.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\compat\query.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\compat\utils.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\core.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\data\ajax.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\data\array.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\data\base.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\data\maximumInputLength.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\data\maximumSelectionLength.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\data\minimumInputLength.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\data\select.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\data\tags.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\data\tokenizer.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\defaults.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\diacritics.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\dropdown.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\dropdown\attachBody.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\dropdown\attachContainer.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\dropdown\closeOnSelect.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\dropdown\hidePlaceholder.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\dropdown\infiniteScroll.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\dropdown\minimumResultsForSearch.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\dropdown\search.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\dropdown\selectOnClose.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\dropdown\stopPropagation.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\ar.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\az.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\bg.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\ca.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\cs.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\da.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\de.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\el.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\en.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\es.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\et.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\eu.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\fa.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\fi.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\fr.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\gl.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\he.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\hi.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\hr.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\hu.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\id.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\is.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\it.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\ja.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\km.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\ko.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\lt.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\lv.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\mk.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\ms.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\nb.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\nl.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\pl.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\pt-BR.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\pt.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\ro.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\ru.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\sk.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\sr-Cyrl.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\sr.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\sv.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\th.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\tr.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\uk.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\vi.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\zh-CN.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\i18n\zh-TW.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\keys.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\options.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\results.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\selection\allowClear.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\selection\base.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\selection\clickMask.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\selection\eventRelay.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\selection\multiple.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\selection\placeholder.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\selection\search.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\selection\single.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\selection\stopPropagation.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\translation.js" />
+    <Content Include="adminpanel\media\select2\src\js\select2\utils.js" />
+    <Content Include="adminpanel\media\select2\src\js\wrapper.end.js" />
+    <Content Include="adminpanel\media\select2\src\js\wrapper.start.js" />
+    <Content Include="adminpanel\media\select2\tests\a11y\search-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\a11y\selection-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\data\array-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\data\base-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\data\inputData-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\data\maximumInputLength-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\data\maximumSelectionLength-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\data\minimumInputLength-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\data\select-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\data\tags-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\data\tokenizer-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\dropdown\dropdownCss-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\dropdown\positioning-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\dropdown\selectOnClose-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\dropdown\stopPropagation-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\helpers.js" />
+    <Content Include="adminpanel\media\select2\tests\integration.html" />
+    <Content Include="adminpanel\media\select2\tests\integration\dom-changes.js" />
+    <Content Include="adminpanel\media\select2\tests\integration\jquery-calls.js" />
+    <Content Include="adminpanel\media\select2\tests\integration\select2-methods.js" />
+    <Content Include="adminpanel\media\select2\tests\options\ajax-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\options\data-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\options\deprecated-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\options\translation-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\options\width-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\results\focusing-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\selection\allowClear-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\selection\containerCss-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\selection\multiple-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\selection\placeholder-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\selection\search-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\selection\single-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\selection\stopPropagation-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\unit.html" />
+    <Content Include="adminpanel\media\select2\tests\utils\decorator-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\utils\escapeMarkup-tests.js" />
+    <Content Include="adminpanel\media\select2\tests\vendor\jquery-1.7.2.js" />
+    <Content Include="adminpanel\media\select2\tests\vendor\qunit-1.23.1.css" />
+    <Content Include="adminpanel\media\select2\tests\vendor\qunit-1.23.1.js" />
+    <Content Include="adminpanel\media\select2\vendor\jquery-2.1.0.js" />
+    <Content Include="adminpanel\newsletter\AddNewsletter.aspx" />
+    <Content Include="adminpanel\newsletter\NewsletterList.aspx" />
+    <Content Include="adminpanel\newsletter\templates\template1\images\arrow.png" />
+    <Content Include="adminpanel\newsletter\templates\template1\images\call.png" />
+    <Content Include="adminpanel\newsletter\templates\template1\images\fb.png" />
+    <Content Include="adminpanel\newsletter\templates\template1\images\goo.png" />
+    <Content Include="adminpanel\newsletter\templates\template1\images\header.jpg" />
+    <Content Include="adminpanel\newsletter\templates\template1\images\img_1.png" />
+    <Content Include="adminpanel\newsletter\templates\template1\images\img_2.png" />
+    <Content Include="adminpanel\newsletter\templates\template1\images\img_3.png" />
+    <Content Include="adminpanel\newsletter\templates\template1\images\item_1.png" />
+    <Content Include="adminpanel\newsletter\templates\template1\images\item_2.png" />
+    <Content Include="adminpanel\newsletter\templates\template1\images\logo.png" />
+    <Content Include="adminpanel\newsletter\templates\template1\images\tw.png" />
+    <Content Include="adminpanel\newsletter\templates\template1\index.html" />
+    <Content Include="adminpanel\newsletter\templates\template1\template01_processing.html" />
+    <Content Include="adminpanel\newsletter\templates\template2\template02_processing.html" />
+    <Content Include="adminpanel\newsletter\viewnewsletter.aspx" />
+    <Content Include="adminpanel\NotAuthorize.aspx" />
+    <Content Include="adminpanel\printjournals\CreatePrintableJournal.aspx" />
+    <Content Include="adminpanel\printjournals\ManagePrintableJournals.aspx" />
+    <Content Include="adminpanel\ResendNotification.aspx" />
+    <Content Include="adminpanel\ResetUserPassword.aspx" />
+    <Content Include="adminpanel\ReviewCasesMigration.aspx" />
+    <Content Include="adminpanel\StatutesCategories.aspx" />
+    <Content Include="adminpanel\StatuteSectionPanel.aspx" />
+    <Content Include="adminpanel\StatutesIndex.aspx" />
+    <Content Include="adminpanel\StatutesIndexDetails.aspx" />
+    <Content Include="adminpanel\StatutesUtility.aspx" />
+    <Content Include="adminpanel\Test.aspx" />
+    <Content Include="adminpanel\UpdatePlanBackend.aspx" />
+    <Content Include="adminpanel\UpdateUserStatus.aspx" />
+    <Content Include="adminpanel\usercontrol\usersearch_actionpanel.ascx" />
+    <Content Include="adminpanel\UsersReports.aspx" />
+    <Content Include="adminpanel\UtilityCases.aspx" />
+    <Content Include="adminpanel\ViewCaseDetails.aspx" />
+    <Content Include="adminpanel\WebScrapStatutes.aspx" />
+    <Content Include="CaseAdvanceSearch.aspx" />
+    <Content Include="CaseDetailsPublic.aspx" />
+    <Content Include="CaseSearchBySection.aspx" />
+    <Content Include="CaseSearchResultBySection.aspx" />
+    <Content Include="CitationDetails.aspx" />
+    <Content Include="CitationSearchResult.aspx" />
+    <Content Include="companyadminpanel\AddUsers.aspx" />
+    <Content Include="companyadminpanel\assets\css\animate.min.css" />
+    <Content Include="companyadminpanel\assets\css\bootstrap.min.css" />
+    <Content Include="companyadminpanel\assets\css\demo.css" />
+    <Content Include="companyadminpanel\assets\css\light-bootstrap-dashboard.css" />
+    <Content Include="companyadminpanel\assets\css\pe-icon-7-stroke.css" />
+    <Content Include="companyadminpanel\assets\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="companyadminpanel\assets\img\default-avatar.png" />
+    <Content Include="companyadminpanel\assets\img\faces\face-0.jpg" />
+    <Content Include="companyadminpanel\assets\img\faces\face-1.jpg" />
+    <Content Include="companyadminpanel\assets\img\faces\face-2.jpg" />
+    <Content Include="companyadminpanel\assets\img\faces\face-3.jpg" />
+    <Content Include="companyadminpanel\assets\img\faces\face-4.jpg" />
+    <Content Include="companyadminpanel\assets\img\faces\face-5.jpg" />
+    <Content Include="companyadminpanel\assets\img\faces\face-6.jpg" />
+    <Content Include="companyadminpanel\assets\img\faces\face-7.jpg" />
+    <Content Include="companyadminpanel\assets\img\faces\tim_vector.jpe" />
+    <Content Include="companyadminpanel\assets\img\favicon.ico" />
+    <Content Include="companyadminpanel\assets\img\loading-bubbles.svg" />
+    <Content Include="companyadminpanel\assets\img\mask.png" />
+    <Content Include="companyadminpanel\assets\img\new_logo.png" />
+    <Content Include="companyadminpanel\assets\img\sidebar-1.jpg" />
+    <Content Include="companyadminpanel\assets\img\sidebar-2.jpg" />
+    <Content Include="companyadminpanel\assets\img\sidebar-3.jpg" />
+    <Content Include="companyadminpanel\assets\img\sidebar-4.jpg" />
+    <Content Include="companyadminpanel\assets\img\sidebar-5.jpg" />
+    <Content Include="companyadminpanel\assets\img\tim_80x80.png" />
+    <Content Include="companyadminpanel\assets\js\bootstrap-checkbox-radio-switch.js" />
+    <Content Include="companyadminpanel\assets\js\bootstrap-notify.js" />
+    <Content Include="companyadminpanel\assets\js\bootstrap-select.js" />
+    <Content Include="companyadminpanel\assets\js\bootstrap.min.js" />
+    <Content Include="companyadminpanel\assets\js\chartist.min.js" />
+    <Content Include="companyadminpanel\assets\js\demo.js" />
+    <Content Include="companyadminpanel\assets\js\jquery-1.10.2.js" />
+    <Content Include="companyadminpanel\assets\js\light-bootstrap-dashboard.js" />
+    <Content Include="companyadminpanel\changepassword.aspx" />
+    <Content Include="companyadminpanel\Dashboard.aspx" />
+    <Content Include="companyadminpanel\ManageUsers.aspx" />
+    <Content Include="companyadminpanel\resetpassword.aspx" />
+    <Content Include="contactus.aspx" />
+    <Content Include="datacoverage.aspx" />
+    <Content Include="DepartmentDocumentView.aspx" />
+    <Content Include="Departments.aspx" />
+    <Content Include="DepartmentsHome.aspx" />
+    <Content Include="DepartmentsList.aspx" />
+    <Content Include="Dictionary.aspx" />
+    <Content Include="DictionaryBlock.aspx" />
+    <Content Include="ebook.aspx" />
+    <Content Include="ebookdetails.aspx" />
+    <Content Include="feature.aspx" />
+    <Content Include="ForgetPassword.aspx" />
+    <Content Include="images\ArrowsLeftcircular.ico" />
+    <Content Include="images\ArrowsRightcircular.ico" />
+    <Content Include="images\no_image-128.png" />
+    <Content Include="inte\intest.asmx" />
+    <Content Include="inte\rabta.asmx" />
+    <Content Include="jazzcashpayment.aspx" />
+    <Content Include="LastestCasesPublic.aspx" />
+    <Content Include="LatestCases.aspx" />
+    <Content Include="LatestDepartmentsList.aspx" />
+    <Content Include="LegalMaxim.aspx" />
+    <Content Include="LegalMaximBlock.aspx" />
+    <Content Include="Legislation.aspx" />
+    <Content Include="MemberHome.aspx" />
+    <Content Include="MyAccount.aspx" />
+    <Content Include="MyFolders.aspx" />
+    <Content Include="MySearch.aspx" />
+    <Content Include="MySubscription.aspx" />
+    <Content Include="m\CasesAdvanceSearch.aspx" />
+    <Content Include="m\CitationDetails.aspx" />
+    <Content Include="m\CitationsList.aspx" />
+    <Content Include="m\css\jquery.mmenu.all.css" />
+    <Content Include="m\css\jquery.mmenu.css" />
+    <Content Include="m\css\jquery.mmenu.oncanvas.css" />
+    <Content Include="m\css\menu.css" />
+    <Content Include="m\css\style.css" />
+    <Content Include="m\Default.aspx" />
+    <Content Include="m\DepartmentDocumentView.aspx" />
+    <Content Include="m\DepartmentsHome.aspx" />
+    <Content Include="m\DepartmentsList.aspx" />
+    <Content Include="m\ForgotPassword.aspx" />
+    <Content Include="m\images\arrow.png" />
+    <Content Include="m\images\bg.png" />
+    <Content Include="m\images\career.jpg" />
+    <Content Include="m\images\clickmore.png" />
+    <Content Include="m\images\clock.png" />
+    <Content Include="m\images\CurrentAwareness.jpg" />
+    <Content Include="m\images\CurrentAwareness2.jpg" />
+    <Content Include="m\images\feedback.jpg" />
+    <Content Include="m\images\folder-h.png" />
+    <Content Include="m\images\folder.png" />
+    <Content Include="m\images\folders-h.png" />
+    <Content Include="m\images\folders.png" />
+    <Content Include="m\images\icon\call.png" />
+    <Content Include="m\images\icon\doc.png" />
+    <Content Include="m\images\icon\home.png" />
+    <Content Include="m\images\icon\law.png" />
+    <Content Include="m\images\icon\scal.png" />
+    <Content Include="m\images\logo-main.png" />
+    <Content Include="m\images\logo.jpg" />
+    <Content Include="m\images\minus.png" />
+    <Content Include="m\images\my-subscription.jpg" />
+    <Content Include="m\images\nav-bg.jpg" />
+    <Content Include="m\images\nav-bg2.jpg" />
+    <Content Include="m\images\newsIcon.png" />
+    <Content Include="m\images\plus.png" />
+    <Content Include="m\images\Practice\banking-finance-industry.png" />
+    <Content Include="m\images\Practice\banking-finance-industryH.png" />
+    <Content Include="m\images\Practice\Banking-Finance.png" />
+    <Content Include="m\images\Practice\Banking-FinanceH.png" />
+    <Content Include="m\images\Practice\Constitutional.png" />
+    <Content Include="m\images\Practice\ConstitutionalH.png" />
+    <Content Include="m\images\Practice\contract-law.png" />
+    <Content Include="m\images\Practice\contract-lawH.png" />
+    <Content Include="m\images\Practice\corporate-commercial.png" />
+    <Content Include="m\images\Practice\corporate-commercialH.png" />
+    <Content Include="m\images\Practice\criminal.png" />
+    <Content Include="m\images\Practice\criminalH.png" />
+    <Content Include="m\images\Practice\energy.png" />
+    <Content Include="m\images\Practice\energyH.png" />
+    <Content Include="m\images\Practice\envirement.png" />
+    <Content Include="m\images\Practice\envirementH.png" />
+    <Content Include="m\images\Practice\family-law.png" />
+    <Content Include="m\images\Practice\family-lawH.png" />
+    <Content Include="m\images\Practice\info-media.png" />
+    <Content Include="m\images\Practice\info-mediaH.png" />
+    <Content Include="m\images\Practice\Intellectual-Property.png" />
+    <Content Include="m\images\Practice\Intellectual-PropertyH.png" />
+    <Content Include="m\images\Practice\Land-Revenue.png" />
+    <Content Include="m\images\Practice\Land-RevenueH.png" />
+    <Content Include="m\images\Practice\Litigation.png" />
+    <Content Include="m\images\Practice\LitigationH.png" />
+    <Content Include="m\images\Practice\public-law.png" />
+    <Content Include="m\images\Practice\public-lawH.png" />
+    <Content Include="m\images\Practice\service-employment.png" />
+    <Content Include="m\images\Practice\service-employmentH.png" />
+    <Content Include="m\images\Practice\Taxation.png" />
+    <Content Include="m\images\Practice\TaxationH.png" />
+    <Content Include="m\images\resources.jpg" />
+    <Content Include="m\images\search.jpg" />
+    <Content Include="m\images\searchBtn.jpg" />
+    <Content Include="m\images\signIn-bg.jpg" />
+    <Content Include="m\images\slide1.jpg" />
+    <Content Include="m\images\slide2.jpg" />
+    <Content Include="m\images\subscription-package.jpg" />
+    <Content Include="m\images\themes.gif" />
+    <Content Include="m\images\User-blue-icon.png" />
+    <Content Include="m\images\userPic.jpg" />
+    <Content Include="m\js\jquery.mmenu.all.min.js" />
+    <Content Include="m\js\jquery.mmenu.all.min.umd.js" />
+    <Content Include="m\js\jquery.mmenu.min.js" />
+    <Content Include="m\js\jquery.mmenu.min.umd.js" />
+    <Content Include="m\js\jquery.mmenu.oncanvas.min.js" />
+    <Content Include="m\js\modernizr.custom.29473.js" />
+    <Content Include="m\js\responsiveslides.js" />
+    <Content Include="m\js\responsiveslides.min.js" />
+    <Content Include="m\js\showHide.js" />
+    <Content Include="m\Legislation.aspx" />
+    <Content Include="m\Login.aspx" />
+    <Content Include="m\MemberHome.aspx" />
+    <Content Include="m\MyFolder.aspx" />
+    <Content Include="m\Pages.aspx" />
+    <Content Include="m\PracticeArea.aspx" />
+    <Content Include="m\PracticeAreaSearchGeneral.aspx" />
+    <Content Include="m\PracticeAreaSearchResult.aspx" />
+    <Content Include="m\Register.aspx" />
+    <Content Include="m\StatutesIndex.aspx" />
+    <Content Include="m\StatutesIndexDetails.aspx" />
+    <Content Include="m\StatutesList.aspx" />
+    <Content Include="m\StatutesListAutoFilter.aspx" />
+    <Content Include="m\usercontrols\TopArea.ascx" />
+    <Content Include="News.aspx" />
+    <Content Include="NewsLive.aspx" />
+    <Content Include="OrderConfirmation.aspx" />
+    <Content Include="OverLimit.aspx" />
+    <Content Include="Pages.aspx" />
+    <Content Include="PracticeArea.aspx" />
+    <Content Include="PracticeAreaSearchGeneral.aspx" />
+    <Content Include="PracticeAreaSearchResult.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="RegistrationPage.aspx" />
+    <Content Include="RestrictedRegion.aspx" />
+    <Content Include="ReviewOrder.aspx" />
+    <Content Include="SearchResults.aspx" />
+    <Content Include="Service.asmx" />
+    <Content Include="sitefeedback.aspx" />
+    <Content Include="StatutesIndex.aspx" />
+    <Content Include="StatutesIndexDetails.aspx" />
+    <Content Include="StatutesIndexDetails_Public.aspx" />
+    <Content Include="StatutesList.aspx" />
+    <Content Include="StatutesListAutoFilter.aspx" />
+    <Content Include="store\cases\imgs\new\law-classes.png" />
+    <Content Include="store\departments\depttemp\3848-No. F. 22%2819%292013 1 July 2013.html" />
+    <Content Include="store\departments\depttemp\3848-No. F. 22%2819%292013 1 July 2013_images\3848-No. F. 22%2819%292013 1 July 2013_img1.jpeg" />
+    <Content Include="store\departments\depttemp\3848-No. F. 22%2819%292013 1 July 2013_styles.css" />
+    <Content Include="store\departments\depttemp\636069038819938814.html" />
+    <Content Include="store\departments\depttemp\636069038819938814_images\636069038819938814_img1.jpeg" />
+    <Content Include="store\departments\depttemp\636069038819938814_styles.css" />
+    <Content Include="store\departments\depttemp\636069039252780925.html" />
+    <Content Include="store\departments\depttemp\636069039252780925_styles.css" />
+    <Content Include="store\departments\depttemp\636196033001528746.html" />
+    <Content Include="store\departments\depttemp\636196033001528746_styles.css" />
+    <Content Include="store\departments\htmlfiles\635954580125743850.htm" />
+    <Content Include="store\departments\htmlfiles\635954583260288851.htm" />
+    <Content Include="store\departments\htmlfiles\635954584716133496.htm" />
+    <Content Include="store\departments\htmlfiles\635954585845006372.htm" />
+    <Content Include="store\departments\htmlfiles\635954586255297397.htm" />
+    <Content Include="store\departments\htmlfiles\635967397395192411.htm" />
+    <Content Include="store\ebook\cover\Chrysanthemum.jpg" />
+    <Content Include="store\generalareadocs\20539Chrysanthemum.jpg" />
+    <Content Include="store\generalareadocs\94995Jellyfish.jpg" />
+    <Content Include="store\generalareadocs\94995Penguins.jpg" />
+    <Content Include="store\generalareadocs\94995Tulips.jpg" />
+    <Content Include="store\users\updateplandocs\67944a.png" />
+    <Content Include="style\css\ebooks-tabs.css" />
+    <Content Include="style\css\ebooks.css" />
+    <Content Include="style\css\input.css" />
+    <Content Include="style\css\introjs.css" />
+    <Content Include="style\css\jquery-ui.css" />
+    <Content Include="style\css\jquery-ui1.css" />
+    <Content Include="style\css\packages.css" />
+    <Content Include="style\css\responsive.css" />
+    <Content Include="style\css\simple.min.css" />
+    <Content Include="style\eNews\css\accordian.css" />
+    <Content Include="style\eNews\css\afterlogin.css" />
+    <Content Include="style\eNews\css\back-top.css" />
+    <Content Include="style\eNews\css\bootstrap.min.css" />
+    <Content Include="style\eNews\css\breadcrums.css" />
+    <Content Include="style\eNews\css\case-law-section.css" />
+    <Content Include="style\eNews\css\case-law.css" />
+    <Content Include="style\eNews\css\datepicker.css" />
+    <Content Include="style\eNews\css\department.css" />
+    <Content Include="style\eNews\css\detail.css" />
+    <Content Include="style\eNews\css\ebooks-tabs.css" />
+    <Content Include="style\eNews\css\ebooks.css" />
+    <Content Include="style\eNews\css\enewslive.css" />
+    <Content Include="style\eNews\css\fastselect.min.css" />
+    <Content Include="style\eNews\css\home.css" />
+    <Content Include="style\eNews\css\icons.css" />
+    <Content Include="style\eNews\css\input.css" />
+    <Content Include="style\eNews\css\news-slider.css" />
+    <Content Include="style\eNews\css\packages.css" />
+    <Content Include="style\eNews\css\practice-area.css" />
+    <Content Include="style\eNews\css\responsive.css" />
+    <Content Include="style\eNews\css\scroll.css" />
+    <Content Include="style\eNews\css\search-table.css" />
+    <Content Include="style\eNews\css\search.css" />
+    <Content Include="style\eNews\css\simple.min.css" />
+    <Content Include="style\eNews\css\site.css" />
+    <Content Include="style\eNews\css\style.css" />
+    <Content Include="style\eNews\css\tabs.css" />
+    <Content Include="style\eNews\js\accordian.js" />
+    <Content Include="style\eNews\js\bootstrap-datepicker.js" />
+    <Content Include="style\eNews\js\bootstrap.min.js" />
+    <Content Include="style\eNews\js\fastselect.standalone.js" />
+    <Content Include="style\eNews\js\jquery.bootstrap.newsbox.min.js" />
+    <Content Include="style\eNews\js\jquery.js" />
+    <Content Include="style\eNews\js\jquery.marquee.js" />
+    <Content Include="style\eNews\js\main.js" />
+    <Content Include="style\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="style\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="style\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="style\img\4Inbox.gif" />
+    <Content Include="style\img\EPLogo.png" />
+    <Content Include="style\img\folder-4-xxl.png" />
+    <Content Include="style\img\folder.gif" />
+    <Content Include="style\img\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="style\img\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="style\img\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="packages.config" />
+    <Content Include="MemberMaster.Master" />
+    <Content Include="adminpanel\ImageHandler.ashx" />
+    <Content Include="adminpanel\media\css\.DS_Store" />
+    <Content Include="adminpanel\media\css\iCheck\.DS_Store" />
+    <Content Include="adminpanel\media\fonts\fontawesome-webfont.eot" />
+    <Content Include="adminpanel\media\fonts\fontawesome-webfont.ttf" />
+    <Content Include="adminpanel\media\fonts\fontawesome-webfont.woff" />
+    <Content Include="adminpanel\media\fonts\FontAwesome.otf" />
+    <Content Include="adminpanel\media\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="adminpanel\media\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="adminpanel\media\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="adminpanel\media\fonts\ionicons.eot" />
+    <Content Include="adminpanel\media\fonts\ionicons.ttf" />
+    <Content Include="adminpanel\media\fonts\ionicons.woff" />
+    <Content Include="adminpanel\media\img\.DS_Store" />
+    <Content Include="adminpanel\media\js\.DS_Store" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\CHANGES.md" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\LICENSE.md" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\scayt\README.md" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\plugins\wsc\README.md" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\README.md" />
+    <Content Include="adminpanel\media\js\plugins\ckeditor\skins\moono\readme.md" />
+    <Content Include="adminpanel\media\js\plugins\input-mask\phone-codes\phone-be.json" />
+    <Content Include="adminpanel\media\js\plugins\input-mask\phone-codes\phone-codes.json" />
+    <Content Include="adminpanel\media\js\plugins\jqueryKnob\.DS_Store" />
+    <Content Include="adminpanel\media\js\plugins\jvectormap\.DS_Store" />
+    <Content Include="adminpanel\media\js\plugins\slimScroll\slimScroll.jquery.json" />
+    <Content Include="adminpanel\media\select2\.bower.json" />
+    <Content Include="adminpanel\media\select2\.editorconfig" />
+    <Content Include="adminpanel\media\select2\.gitignore" />
+    <Content Include="adminpanel\media\select2\.jshintignore" />
+    <Content Include="adminpanel\media\select2\.jshintrc" />
+    <Content Include="adminpanel\media\select2\.travis.yml" />
+    <Content Include="adminpanel\media\select2\bower.json" />
+    <Content Include="adminpanel\media\select2\component.json" />
+    <Content Include="adminpanel\media\select2\composer.json" />
+    <Content Include="adminpanel\media\select2\CONTRIBUTING.md" />
+    <Content Include="adminpanel\media\select2\docs\.gitignore" />
+    <Content Include="adminpanel\media\select2\docs\css\bootstrap.scss" />
+    <Content Include="adminpanel\media\select2\docs\css\font-awesome.scss" />
+    <Content Include="adminpanel\media\select2\docs\css\s2-docs.scss" />
+    <Content Include="adminpanel\media\select2\docs\images\manifest.json" />
+    <Content Include="adminpanel\media\select2\docs\README.md" />
+    <Content Include="adminpanel\media\select2\docs\vendor\fonts\fontawesome-webfont.eot" />
+    <Content Include="adminpanel\media\select2\docs\vendor\fonts\fontawesome-webfont.ttf" />
+    <Content Include="adminpanel\media\select2\docs\vendor\fonts\fontawesome-webfont.woff" />
+    <Content Include="adminpanel\media\select2\docs\vendor\fonts\fontawesome-webfont.woff2" />
+    <Content Include="adminpanel\media\select2\docs\vendor\fonts\FontAwesome.otf" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_alerts.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_buttons.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_center-block.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_forms.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_gradients.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_grid.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_hide-text.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_image.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_labels.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_list-group.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_nav-vertical-align.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_opacity.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_pagination.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_panels.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_progress-bar.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_reset-filter.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_resize.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_responsive-visibility.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_size.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_tab-focus.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_table-row.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_text-overflow.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\mixins\_vendor-prefixes.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_alerts.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_badges.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_breadcrumbs.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_button-groups.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_buttons.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_carousel.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_close.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_code.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_component-animations.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_dropdowns.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_forms.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_glyphicons.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_grid.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_input-groups.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_jumbotron.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_labels.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_list-group.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_media.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_mixins.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_modals.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_navbar.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_navs.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_normalize.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_pager.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_pagination.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_panels.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_popovers.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_print.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_progress-bars.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_responsive-embed.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_responsive-utilities.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_scaffolding.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_tables.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_theme.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_thumbnails.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_tooltip.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_type.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_utilities.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_variables.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\bootstrap\_wells.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\font-awesome\_animated.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\font-awesome\_bordered-pulled.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\font-awesome\_core.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\font-awesome\_fixed-width.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\font-awesome\_icons.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\font-awesome\_larger.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\font-awesome\_list.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\font-awesome\_mixins.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\font-awesome\_path.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\font-awesome\_rotated-flipped.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\font-awesome\_stacked.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\vendor\font-awesome\_variables.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_alert.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_anchorjs.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_buttons.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_code.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_dl-panels.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_examples.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_featurette.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_footer.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_hamburger.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_home.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_jumbotron.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_layout.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_nav.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_prettify.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_result-repository.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_sidenav.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_social.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_syntax-highlighting.scss" />
+    <Content Include="adminpanel\media\select2\docs\_sass\_typography.scss" />
+    <Content Include="adminpanel\media\select2\ISSUE_TEMPLATE.md" />
+    <Content Include="adminpanel\media\select2\LICENSE.md" />
+    <Content Include="adminpanel\media\select2\package.json" />
+    <Content Include="adminpanel\media\select2\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="adminpanel\media\select2\README.md" />
+    <Content Include="adminpanel\media\select2\select2.jquery.json" />
+    <Content Include="adminpanel\media\select2\src\scss\core.scss" />
+    <Content Include="adminpanel\media\select2\src\scss\mixins\_gradients.scss" />
+    <Content Include="adminpanel\media\select2\src\scss\theme\classic\layout.scss" />
+    <Content Include="adminpanel\media\select2\src\scss\theme\classic\_defaults.scss" />
+    <Content Include="adminpanel\media\select2\src\scss\theme\classic\_multiple.scss" />
+    <Content Include="adminpanel\media\select2\src\scss\theme\classic\_single.scss" />
+    <Content Include="adminpanel\media\select2\src\scss\theme\default\layout.scss" />
+    <Content Include="adminpanel\media\select2\src\scss\theme\default\_multiple.scss" />
+    <Content Include="adminpanel\media\select2\src\scss\theme\default\_single.scss" />
+    <Content Include="adminpanel\media\select2\src\scss\_dropdown.scss" />
+    <Content Include="adminpanel\media\select2\src\scss\_multiple.scss" />
+    <Content Include="adminpanel\media\select2\src\scss\_single.scss" />
+    <Content Include="adminpanel\Site1.Master" />
+    <Content Include="m\General.Master" />
+    <Content Include="m\MemberMaster.Master" />
+    <Content Include="companyadminpanel\assets\.DS_Store" />
+    <Content Include="companyadminpanel\assets\css\.DS_Store" />
+    <Content Include="companyadminpanel\assets\fonts\.DS_Store" />
+    <Content Include="companyadminpanel\assets\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="companyadminpanel\assets\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="companyadminpanel\assets\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="companyadminpanel\assets\img\.DS_Store" />
+    <Content Include="companyadminpanel\assets\img\faces\.DS_Store" />
+    <Content Include="companyadminpanel\assets\sass\.DS_Store" />
+    <Content Include="companyadminpanel\assets\sass\lbd\.DS_Store" />
+    <Content Include="companyadminpanel\assets\sass\lbd\mixins\_buttons.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\mixins\_cards.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\mixins\_chartist.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\mixins\_icons.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\mixins\_inputs.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\mixins\_labels.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\mixins\_morphing-buttons.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\mixins\_navbars.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\mixins\_social-buttons.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\mixins\_tabs.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\mixins\_transparency.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\mixins\_vendor-prefixes.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_alerts.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_buttons.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_cards.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_carousel.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_chartist.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_checkbox-radio-switch.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_collapse.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_datepicker.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_dropdown.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_flexisel.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_footers.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_icons.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_inputs.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_labels.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_media.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_misc.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_mixins.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_modal.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_morphing-buttons.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_navbars.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_progress-bars.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_responsive.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_sections.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_sidebar-and-main-panel.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_sliders.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_social-buttons.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_tables.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_tabs-navs-pagination.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_tags.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_tooltips-and-popovers.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_typography.scss" />
+    <Content Include="companyadminpanel\assets\sass\lbd\_variables.scss" />
+    <Content Include="companyadminpanel\assets\sass\light-bootstrap-dashboard.scss" />
+    <Content Include="companyadminpanel\Site1.Master" />
+    <None Include="Properties\PublishProfiles\eastlaw_v2.pubxml" />
+    <Content Include="store\cases\docs\396.pdf" />
+    <Content Include="store\departmentsfiles\docs\questionare for umar mughal %281%29.docx" />
+    <Content Include="store\departments\wordfiles\1393-SALES TAX GENERAL ORDER NO. 188 OF 2015 December 30, 2015.docx" />
+    <Content Include="store\departments\wordfiles\2527-ORDER NO.11.2011  24 November 2011.doc" />
+    <Content Include="store\departments\wordfiles\2527-S.R.O. 1198 %281%29 2015 December 3, 2015.docx" />
+    <Content Include="store\departments\wordfiles\2749-S.R.O. 115%28I%29 2015 9 February 2015.docx" />
+    <Content Include="store\departments\wordfiles\2749-SALES TAX GENERAL ORDER NO. 182 OF 2015 December 18, 2015.docx" />
+    <Content Include="store\departments\wordfiles\3192-No. F. 22%2819%292013 1 July 2013.docx" />
+    <Content Include="store\departments\wordfiles\3192-SALES TAX GENERAL ORDER NO. 188 OF 2015 December 30, 2015.docx" />
+    <Content Include="store\departments\wordfiles\3848-No. F. 22%2819%292013 1 July 2013.docx" />
+    <Content Include="store\departments\wordfiles\3848-ORDER NO.11.2011  24 November 2011.doc" />
+    <Content Include="store\departments\wordfiles\5517-No. F. 22%2819%292013 1 July 2013.docx" />
+    <Content Include="store\departments\wordfiles\5517-ORDER NO.3 OF 2002 2 February 2002.doc" />
+    <Content Include="store\departments\wordfiles\5517-S.R.O. 1198 %281%29 2015 December 3, 2015.docx" />
+    <Content Include="store\departments\wordfiles\Circular No.19 OF 2016 16-12-2016.doc" />
+    <Content Include="store\departments\wordfiles\Circular No.19 OF 2016 16-12-2016.pdf" />
+    <Content Include="store\departments\wordfiles\No. F. 22%2819%292013 1 July 2013.docx" />
+    <Content Include="store\departments\wordfiles\ORDER NO.3 OF 2002 2 February 2002.doc" />
+    <Content Include="store\departments\wordfiles\Pakistan_Code.pdf" />
+    <Content Include="store\users\dailyrpt\RPT_20042016.pdf" />
+    <Content Include="store\users\invoices\11.pdf" />
+    <Content Include="store\users\invoices\23.pdf" />
+    <Content Include="store\users\invoices\24.pdf" />
+    <Content Include="store\users\invoices\27.pdf" />
+    <Content Include="store\users\invoices\28.pdf" />
+    <Content Include="store\users\invoices\29.pdf" />
+    <Content Include="store\users\invoices\30.pdf" />
+    <Content Include="store\users\invoices\31.pdf" />
+    <Content Include="store\users\invoices\32.pdf" />
+    <Content Include="store\users\invoices\33.pdf" />
+    <Content Include="store\users\invoices\34.pdf" />
+    <Content Include="store\users\invoices\35.pdf" />
+    <Content Include="store\users\invoices\36.pdf" />
+    <Content Include="store\users\invoices\41.pdf" />
+    <Content Include="store\users\invoices\42.pdf" />
+    <Content Include="store\users\invoices\56.pdf" />
+    <Content Include="store\users\invoices\62.pdf" />
+    <Content Include="store\users\invoices\68.pdf" />
+    <Content Include="store\users\invoices\69.pdf" />
+    <Content Include="store\users\invoices\70.pdf" />
+    <Content Include="store\users\invoices\71.pdf" />
+    <Content Include="store\users\invoices\72.pdf" />
+    <Content Include="store\users\invoices\73.pdf" />
+    <Content Include="store\users\invoices\74.pdf" />
+    <Content Include="store\users\invoices\75.pdf" />
+    <Content Include="store\users\invoices\76.pdf" />
+    <Content Include="store\users\invoices\77.pdf" />
+    <Content Include="store\users\invoices\78.pdf" />
+    <Content Include="store\users\invoices\79.pdf" />
+    <Content Include="store\users\invoices\80.pdf" />
+    <Content Include="store\users\invoices\81.pdf" />
+    <Content Include="store\users\invoices\INV_002752_WithoutTax.pdf" />
+    <Content Include="store\users\invoices\INV_002752_withtax.pdf" />
+    <Content Include="store\users\invoices\INV_111.pdf" />
+    <Content Include="store\users\invoices\INV_1139.pdf" />
+    <Content Include="store\users\invoices\INV_1140.pdf" />
+    <Content Include="store\users\invoices\INV_1240.pdf" />
+    <Content Include="store\users\invoices\INV_1241.pdf" />
+    <Content Include="store\users\invoices\INV_1242.pdf" />
+    <Content Include="store\users\invoices\INV_1246.pdf" />
+    <Content Include="store\users\invoices\INV_1247.pdf" />
+    <Content Include="store\users\invoices\INV_1689.pdf" />
+    <Content Include="store\users\invoices\INV_1690.pdf" />
+    <Content Include="store\users\invoices\INV_1726.pdf" />
+    <Content Include="store\users\invoices\INV_1737.pdf" />
+    <Content Include="store\users\invoices\INV_1738.pdf" />
+    <Content Include="store\users\invoices\INV_1739.pdf" />
+    <Content Include="store\users\invoices\INV_1740.pdf" />
+    <Content Include="store\users\invoices\INV_1743.pdf" />
+    <Content Include="store\users\invoices\INV_1746.pdf" />
+    <Content Include="store\users\invoices\INV_1755.pdf" />
+    <Content Include="store\users\invoices\INV_1756.pdf" />
+    <Content Include="store\users\invoices\INV_1758.pdf" />
+    <Content Include="store\users\invoices\INV_1759.pdf" />
+    <Content Include="store\users\invoices\INV_1761.pdf" />
+    <Content Include="store\users\invoices\INV_1772.pdf" />
+    <Content Include="store\users\invoices\INV_1773.pdf" />
+    <Content Include="store\users\invoices\INV_1774.pdf" />
+    <Content Include="store\users\invoices\INV_24392752.pdf" />
+    <Content Include="store\users\invoices\INV_2610.pdf" />
+    <Content Include="store\users\invoices\INV_2612.pdf" />
+    <Content Include="store\users\invoices\INV_2680.pdf" />
+    <Content Include="store\users\invoices\INV_2776.pdf" />
+    <Content Include="store\users\invoices\INV_2777.pdf" />
+    <Content Include="store\users\invoices\INV_2778.pdf" />
+    <Content Include="store\users\invoices\INV_2779.pdf" />
+    <Content Include="store\users\invoices\INV_2780.pdf" />
+    <Content Include="store\users\invoices\INV_2781.pdf" />
+    <Content Include="store\users\invoices\INV_7061.pdf" />
+    <Content Include="store\users\invoices\INV_7062.pdf" />
+    <Content Include="store\users\invoices\INV_82.pdf" />
+    <Content Include="store\users\invoices\mypdf.pdf" />
+    <Content Include="store\users\paidinvoices\27.pdf" />
+    <Content Include="store\users\paidinvoices\28.pdf" />
+    <Content Include="store\users\paidinvoices\41.pdf" />
+    <Content Include="store\users\paidinvoices\42.pdf" />
+    <Content Include="store\users\paidinvoices\RCP_001696.pdf" />
+    <Content Include="store\users\paidinvoices\RCP_106.pdf" />
+    <Content Include="store\users\paidinvoices\RCP_2752_WithoutTax.pdf" />
+    <Content Include="store\users\paidinvoices\RCP_2752_withtax.pdf" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="style\img\full-folder-xxl.png" />
+    <Content Include="style\img\paid.png" />
+    <Content Include="style\js\intro.js" />
+    <Content Include="style\js\menu.js" />
+    <Content Include="Subscription.aspx" />
+    <Content Include="Withoutlogin.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="EmailTemplates\AccountExpiredNotification.html" />
+    <Content Include="EmailTemplates\AccountExpiredNotificationComp.html" />
+    <Content Include="EmailTemplates\AdminInvoiceEmail.html" />
+    <Content Include="EmailTemplates\ContactEmail.html" />
+    <Content Include="EmailTemplates\ForgetPassword.html" />
+    <Content Include="EmailTemplates\InquiryEmail.html" />
+    <Content Include="EmailTemplates\Invoice.html" />
+    <Content Include="EmailTemplates\InvoiceEmail.html" />
+    <Content Include="EmailTemplates\InvoiceEmailComp.html" />
+    <Content Include="EmailTemplates\InvoicePaid.html" />
+    <Content Include="EmailTemplates\NewRegistration.html" />
+    <Content Include="EmailTemplates\NewRegistrationAdmin.html" />
+    <Content Include="EmailTemplates\OrderConfirmation.html" />
+    <Content Include="EmailTemplates\ResetPassword.html" />
+    <Content Include="EmailTemplates\UserChangeEmail.html" />
+    <Content Include="EmailTemplates\UserUpdateProfile.html" />
+    <Content Include="EmailTemplates\Welcome.html" />
+    <Content Include="Global.asax" />
+    <Content Include="style\css\accordian.css" />
+    <Content Include="style\css\afterlogin.css" />
+    <Content Include="style\css\back-top.css" />
+    <Content Include="style\css\bootstrap.min.css" />
+    <Content Include="style\css\breadcrums.css" />
+    <Content Include="style\css\case-law-section.css" />
+    <Content Include="style\css\case-law.css" />
+    <Content Include="style\css\datepicker.css" />
+    <Content Include="style\css\department.css" />
+    <Content Include="style\css\detail.css" />
+    <Content Include="style\css\enewslive.css" />
+    <Content Include="style\css\fastselect.min.css" />
+    <Content Include="style\css\home.css" />
+    <Content Include="style\css\icons.css" />
+    <Content Include="style\css\news-slider.css" />
+    <Content Include="style\css\practice-area.css" />
+    <Content Include="style\css\scroll.css" />
+    <Content Include="style\css\search-table.css" />
+    <Content Include="style\css\search.css" />
+    <Content Include="style\css\site.css" />
+    <Content Include="style\css\style.css" />
+    <Content Include="style\css\tabs.css" />
+    <Content Include="style\data1\images\slider1.jpg" />
+    <Content Include="style\data1\images\slider2.jpg" />
+    <Content Include="style\data1\images\slider3.jpg" />
+    <Content Include="style\data1\images\slider4.jpg" />
+    <Content Include="style\engine1\bullet.png" />
+    <Content Include="style\engine1\script.js" />
+    <Content Include="style\engine1\slider.css" />
+    <Content Include="style\engine1\slider.js" />
+    <Content Include="style\engine1\style.mod.css" />
+    <Content Include="style\engine1\wowslider.mod.js" />
+    <Content Include="style\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="style\img\altafbhai.jpg" />
+    <Content Include="style\img\cd-top-arrow.svg" />
+    <Content Include="style\img\channel1.png" />
+    <Content Include="style\img\channel2.png" />
+    <Content Include="style\img\channel3.png" />
+    <Content Include="style\img\clip.png" />
+    <Content Include="style\img\faisal.jpg" />
+    <Content Include="style\img\fav.ico" />
+    <Content Include="style\img\fav.png" />
+    <Content Include="style\img\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="style\img\imran.jpg" />
+    <Content Include="style\img\item1.png" />
+    <Content Include="style\img\item2.png" />
+    <Content Include="style\img\item3.png" />
+    <Content Include="style\img\jalsa.jpg" />
+    <Content Include="style\img\logo.png" />
+    <Content Include="style\img\logo2.jpg" />
+    <Content Include="style\img\nab.jpg" />
+    <Content Include="style\img\nawaz.jpg" />
+    <Content Include="style\img\nawaz2.jpg" />
+    <Content Include="style\img\search_tabs.png" />
+    <Content Include="style\img\slider1.jpg" />
+    <Content Include="style\img\slider2.jpg" />
+    <Content Include="style\img\slider3.jpg" />
+    <Content Include="style\img\slider4.jpg" />
+    <Content Include="style\img\umar.jpg" />
+    <Content Include="style\js\accordian.js" />
+    <Content Include="style\js\bootstrap-datepicker.js" />
+    <Content Include="style\js\bootstrap.min.js" />
+    <Content Include="style\js\fastselect.standalone.js" />
+    <Content Include="style\js\jquery.bootstrap.newsbox.min.js" />
+    <Content Include="style\js\jquery.js" />
+    <Content Include="style\js\main.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivateUser.aspx.cs">
+      <DependentUpon>ActivateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActivateUser.aspx.designer.cs">
+      <DependentUpon>ActivateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\AddCaseUpdateHistory.aspx.cs">
+      <DependentUpon>AddCaseUpdateHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\AddCaseUpdateHistory.aspx.designer.cs">
+      <DependentUpon>AddCaseUpdateHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\AddCompany.aspx.cs">
+      <DependentUpon>AddCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\AddCompany.aspx.designer.cs">
+      <DependentUpon>AddCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\AddDepartment.aspx.cs">
+      <DependentUpon>AddDepartment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\AddDepartment.aspx.designer.cs">
+      <DependentUpon>AddDepartment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\AddEditCourts.aspx.cs">
+      <DependentUpon>AddEditCourts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\AddEditCourts.aspx.designer.cs">
+      <DependentUpon>AddEditCourts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\AddGeneralAreas.aspx.cs">
+      <DependentUpon>AddGeneralAreas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\AddGeneralAreas.aspx.designer.cs">
+      <DependentUpon>AddGeneralAreas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\AddGlossary.aspx.cs">
+      <DependentUpon>AddGlossary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\AddGlossary.aspx.designer.cs">
+      <DependentUpon>AddGlossary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\AddNews.aspx.cs">
+      <DependentUpon>AddNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\AddNews.aspx.designer.cs">
+      <DependentUpon>AddNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\AddStatute.aspx.cs">
+      <DependentUpon>AddStatute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\AddStatute.aspx.designer.cs">
+      <DependentUpon>AddStatute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\CitationsSearchJournalWise.cs" />
+    <Compile Include="adminpanel\CRMUserExpiry.aspx.cs">
+      <DependentUpon>CRMUserExpiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\CRMUserExpiry.aspx.designer.cs">
+      <DependentUpon>CRMUserExpiry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\managecourtappealmastr.aspx.cs">
+      <DependentUpon>managecourtappealmastr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\managecourtappealmastr.aspx.designer.cs">
+      <DependentUpon>managecourtappealmastr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageCourtHierarchy.aspx.cs">
+      <DependentUpon>ManageCourtHierarchy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageCourtHierarchy.aspx.designer.cs">
+      <DependentUpon>ManageCourtHierarchy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\newsletter\AddUsers.aspx.cs">
+      <DependentUpon>AddUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\newsletter\AddUsers.aspx.designer.cs">
+      <DependentUpon>AddUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\AdminGeneral.aspx.cs">
+      <DependentUpon>AdminGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\AdminGeneral.aspx.designer.cs">
+      <DependentUpon>AdminGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\AdminMain.aspx.cs">
+      <DependentUpon>AdminMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\AdminMain.aspx.designer.cs">
+      <DependentUpon>AdminMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\AdminUsers.aspx.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\AdminUsers.aspx.designer.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\BackendActivityLog.aspx.cs">
+      <DependentUpon>BackendActivityLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\BackendActivityLog.aspx.designer.cs">
+      <DependentUpon>BackendActivityLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\CasesMigrationList.aspx.cs">
+      <DependentUpon>CasesMigrationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\CasesMigrationList.aspx.designer.cs">
+      <DependentUpon>CasesMigrationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\CasesReport.aspx.cs">
+      <DependentUpon>CasesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\CasesReport.aspx.designer.cs">
+      <DependentUpon>CasesReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\CitationDetailedReview.aspx.cs">
+      <DependentUpon>CitationDetailedReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\CitationDetailedReview.aspx.designer.cs">
+      <DependentUpon>CitationDetailedReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\CRMUserView.aspx.cs">
+      <DependentUpon>CRMUserView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\CRMUserView.aspx.designer.cs">
+      <DependentUpon>CRMUserView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\DeleteCasesByFiles.aspx.cs">
+      <DependentUpon>DeleteCasesByFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\DeleteCasesByFiles.aspx.designer.cs">
+      <DependentUpon>DeleteCasesByFiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ebook\AddBook.aspx.cs">
+      <DependentUpon>AddBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ebook\AddBook.aspx.designer.cs">
+      <DependentUpon>AddBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ebook\ManageEbookCategories.aspx.cs">
+      <DependentUpon>ManageEbookCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ebook\ManageEbookCategories.aspx.designer.cs">
+      <DependentUpon>ManageEbookCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ebook\ManageEBookIndexes.aspx.cs">
+      <DependentUpon>ManageEBookIndexes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ebook\ManageEBookIndexes.aspx.designer.cs">
+      <DependentUpon>ManageEBookIndexes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ebook\ManageEBooks.aspx.cs">
+      <DependentUpon>ManageEBooks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ebook\ManageEBooks.aspx.designer.cs">
+      <DependentUpon>ManageEBooks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ebook\viewebookdata.aspx.cs">
+      <DependentUpon>viewebookdata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ebook\viewebookdata.aspx.designer.cs">
+      <DependentUpon>viewebookdata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\FrontEndActivityLogs.aspx.cs">
+      <DependentUpon>FrontEndActivityLogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\FrontEndActivityLogs.aspx.designer.cs">
+      <DependentUpon>FrontEndActivityLogs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\GeneralSearch.aspx.cs">
+      <DependentUpon>GeneralSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\GeneralSearch.aspx.designer.cs">
+      <DependentUpon>GeneralSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\GenerateCaseExcel.aspx.cs">
+      <DependentUpon>GenerateCaseExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\GenerateCaseExcel.aspx.designer.cs">
+      <DependentUpon>GenerateCaseExcel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\GenerateUserOrder.aspx.cs">
+      <DependentUpon>GenerateUserOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\GenerateUserOrder.aspx.designer.cs">
+      <DependentUpon>GenerateUserOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ImageHandler.ashx.cs">
+      <DependentUpon>ImageHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\JudgeMergePanel.aspx.cs">
+      <DependentUpon>JudgeMergePanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\JudgeMergePanel.aspx.designer.cs">
+      <DependentUpon>JudgeMergePanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageAdvocates.aspx.cs">
+      <DependentUpon>ManageAdvocates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageAdvocates.aspx.designer.cs">
+      <DependentUpon>ManageAdvocates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageCitationVariations.aspx.cs">
+      <DependentUpon>ManageCitationVariations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageCitationVariations.aspx.designer.cs">
+      <DependentUpon>ManageCitationVariations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageCMSPages.aspx.cs">
+      <DependentUpon>ManageCMSPages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageCMSPages.aspx.designer.cs">
+      <DependentUpon>ManageCMSPages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageCompanies.aspx.cs">
+      <DependentUpon>ManageCompanies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageCompanies.aspx.designer.cs">
+      <DependentUpon>ManageCompanies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageCourts.aspx.cs">
+      <DependentUpon>ManageCourts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageCourts.aspx.designer.cs">
+      <DependentUpon>ManageCourts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageCourtsMaster.aspx.cs">
+      <DependentUpon>ManageCourtsMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageCourtsMaster.aspx.designer.cs">
+      <DependentUpon>ManageCourtsMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageDepartmentFile.aspx.cs">
+      <DependentUpon>ManageDepartmentFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageDepartmentFile.aspx.designer.cs">
+      <DependentUpon>ManageDepartmentFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageDepartments.aspx.cs">
+      <DependentUpon>ManageDepartments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageDepartments.aspx.designer.cs">
+      <DependentUpon>ManageDepartments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageDictionary.aspx.cs">
+      <DependentUpon>ManageDictionary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageDictionary.aspx.designer.cs">
+      <DependentUpon>ManageDictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageGeneralAreas.aspx.cs">
+      <DependentUpon>ManageGeneralAreas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageGeneralAreas.aspx.designer.cs">
+      <DependentUpon>ManageGeneralAreas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageGlossaryList.aspx.cs">
+      <DependentUpon>ManageGlossaryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageGlossaryList.aspx.designer.cs">
+      <DependentUpon>ManageGlossaryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageJournals.aspx.cs">
+      <DependentUpon>ManageJournals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageJournals.aspx.designer.cs">
+      <DependentUpon>ManageJournals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageJudges.aspx.cs">
+      <DependentUpon>ManageJudges.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageJudges.aspx.designer.cs">
+      <DependentUpon>ManageJudges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageKeywords.aspx.cs">
+      <DependentUpon>ManageKeywords.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageKeywords.aspx.designer.cs">
+      <DependentUpon>ManageKeywords.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageLegalMaxim.aspx.cs">
+      <DependentUpon>ManageLegalMaxim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageLegalMaxim.aspx.designer.cs">
+      <DependentUpon>ManageLegalMaxim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageNews.aspx.cs">
+      <DependentUpon>ManageNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageNews.aspx.designer.cs">
+      <DependentUpon>ManageNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManagePlans.aspx.cs">
+      <DependentUpon>ManagePlans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManagePlans.aspx.designer.cs">
+      <DependentUpon>ManagePlans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManagePracticeCategories.aspx.cs">
+      <DependentUpon>ManagePracticeCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManagePracticeCategories.aspx.designer.cs">
+      <DependentUpon>ManagePracticeCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManagePracticeSubCategories.aspx.cs">
+      <DependentUpon>ManagePracticeSubCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManagePracticeSubCategories.aspx.designer.cs">
+      <DependentUpon>ManagePracticeSubCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageStatutesIndex.aspx.cs">
+      <DependentUpon>ManageStatutesIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageStatutesIndex.aspx.designer.cs">
+      <DependentUpon>ManageStatutesIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageUserPlanUpdate.aspx.cs">
+      <DependentUpon>ManageUserPlanUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageUserPlanUpdate.aspx.designer.cs">
+      <DependentUpon>ManageUserPlanUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageUsers.aspx.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageUsers.aspx.designer.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ManageWebScapStatutes.aspx.cs">
+      <DependentUpon>ManageWebScapStatutes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ManageWebScapStatutes.aspx.designer.cs">
+      <DependentUpon>ManageWebScapStatutes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\newsletter\AddNewsletter.aspx.cs">
+      <DependentUpon>AddNewsletter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\newsletter\AddNewsletter.aspx.designer.cs">
+      <DependentUpon>AddNewsletter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\newsletter\NewsletterHTMLGenerator.cs" />
+    <Compile Include="adminpanel\newsletter\NewsletterList.aspx.cs">
+      <DependentUpon>NewsletterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\newsletter\NewsletterList.aspx.designer.cs">
+      <DependentUpon>NewsletterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\newsletter\viewnewsletter.aspx.cs">
+      <DependentUpon>viewnewsletter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\newsletter\viewnewsletter.aspx.designer.cs">
+      <DependentUpon>viewnewsletter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\NotAuthorize.aspx.cs">
+      <DependentUpon>NotAuthorize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\NotAuthorize.aspx.designer.cs">
+      <DependentUpon>NotAuthorize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\printjournals\CreatePrintableJournal.aspx.cs">
+      <DependentUpon>CreatePrintableJournal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\printjournals\CreatePrintableJournal.aspx.designer.cs">
+      <DependentUpon>CreatePrintableJournal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\printjournals\ManagePrintableJournals.aspx.cs">
+      <DependentUpon>ManagePrintableJournals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\printjournals\ManagePrintableJournals.aspx.designer.cs">
+      <DependentUpon>ManagePrintableJournals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ResendNotification.aspx.cs">
+      <DependentUpon>ResendNotification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ResendNotification.aspx.designer.cs">
+      <DependentUpon>ResendNotification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ResetUserPassword.aspx.cs">
+      <DependentUpon>ResetUserPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ResetUserPassword.aspx.designer.cs">
+      <DependentUpon>ResetUserPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ReviewCasesMigration.aspx.cs">
+      <DependentUpon>ReviewCasesMigration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ReviewCasesMigration.aspx.designer.cs">
+      <DependentUpon>ReviewCasesMigration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\StatutesCategories.aspx.cs">
+      <DependentUpon>StatutesCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\StatutesCategories.aspx.designer.cs">
+      <DependentUpon>StatutesCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\StatuteSectionPanel.aspx.cs">
+      <DependentUpon>StatuteSectionPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\StatuteSectionPanel.aspx.designer.cs">
+      <DependentUpon>StatuteSectionPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\StatutesIndex.aspx.cs">
+      <DependentUpon>StatutesIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\StatutesIndex.aspx.designer.cs">
+      <DependentUpon>StatutesIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\StatutesIndexDetails.aspx.cs">
+      <DependentUpon>StatutesIndexDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\StatutesIndexDetails.aspx.designer.cs">
+      <DependentUpon>StatutesIndexDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\StatutesUtility.aspx.cs">
+      <DependentUpon>StatutesUtility.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\StatutesUtility.aspx.designer.cs">
+      <DependentUpon>StatutesUtility.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\UpdatePlanBackend.aspx.cs">
+      <DependentUpon>UpdatePlanBackend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\UpdatePlanBackend.aspx.designer.cs">
+      <DependentUpon>UpdatePlanBackend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\UpdateUserStatus.aspx.cs">
+      <DependentUpon>UpdateUserStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\UpdateUserStatus.aspx.designer.cs">
+      <DependentUpon>UpdateUserStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\usercontrol\usersearch_actionpanel.ascx.cs">
+      <DependentUpon>usersearch_actionpanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\usercontrol\usersearch_actionpanel.ascx.designer.cs">
+      <DependentUpon>usersearch_actionpanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\UsersReports.aspx.cs">
+      <DependentUpon>UsersReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\UsersReports.aspx.designer.cs">
+      <DependentUpon>UsersReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\UtilityCases.aspx.cs">
+      <DependentUpon>UtilityCases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\UtilityCases.aspx.designer.cs">
+      <DependentUpon>UtilityCases.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\ValidateUserGroup.cs" />
+    <Compile Include="adminpanel\ViewCaseDetails.aspx.cs">
+      <DependentUpon>ViewCaseDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\ViewCaseDetails.aspx.designer.cs">
+      <DependentUpon>ViewCaseDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpanel\WebScrapStatutes.aspx.cs">
+      <DependentUpon>WebScrapStatutes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpanel\WebScrapStatutes.aspx.designer.cs">
+      <DependentUpon>WebScrapStatutes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CaseAdvanceSearch.aspx.cs">
+      <DependentUpon>CaseAdvanceSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CaseAdvanceSearch.aspx.designer.cs">
+      <DependentUpon>CaseAdvanceSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CaseDetailsPublic.aspx.cs">
+      <DependentUpon>CaseDetailsPublic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CaseDetailsPublic.aspx.designer.cs">
+      <DependentUpon>CaseDetailsPublic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CaseSearchBySection.aspx.cs">
+      <DependentUpon>CaseSearchBySection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CaseSearchBySection.aspx.designer.cs">
+      <DependentUpon>CaseSearchBySection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CaseSearchResultBySection.aspx.cs">
+      <DependentUpon>CaseSearchResultBySection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CaseSearchResultBySection.aspx.designer.cs">
+      <DependentUpon>CaseSearchResultBySection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CitationDetails.aspx.cs">
+      <DependentUpon>CitationDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CitationDetails.aspx.designer.cs">
+      <DependentUpon>CitationDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CitationSearchResult.aspx.cs">
+      <DependentUpon>CitationSearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CitationSearchResult.aspx.designer.cs">
+      <DependentUpon>CitationSearchResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonClass.cs" />
+    <Compile Include="companyadminpanel\AddUsers.aspx.cs">
+      <DependentUpon>AddUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="companyadminpanel\AddUsers.aspx.designer.cs">
+      <DependentUpon>AddUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="companyadminpanel\changepassword.aspx.cs">
+      <DependentUpon>changepassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="companyadminpanel\changepassword.aspx.designer.cs">
+      <DependentUpon>changepassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="companyadminpanel\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="companyadminpanel\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="companyadminpanel\ManageUsers.aspx.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="companyadminpanel\ManageUsers.aspx.designer.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="companyadminpanel\resetpassword.aspx.cs">
+      <DependentUpon>resetpassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="companyadminpanel\resetpassword.aspx.designer.cs">
+      <DependentUpon>resetpassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="companyadminpanel\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="companyadminpanel\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="contactus.aspx.cs">
+      <DependentUpon>contactus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contactus.aspx.designer.cs">
+      <DependentUpon>contactus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datacoverage.aspx.cs">
+      <DependentUpon>datacoverage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datacoverage.aspx.designer.cs">
+      <DependentUpon>datacoverage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentDocumentView.aspx.cs">
+      <DependentUpon>DepartmentDocumentView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DepartmentDocumentView.aspx.designer.cs">
+      <DependentUpon>DepartmentDocumentView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Departments.aspx.cs">
+      <DependentUpon>Departments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Departments.aspx.designer.cs">
+      <DependentUpon>Departments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentsHome.aspx.cs">
+      <DependentUpon>DepartmentsHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DepartmentsHome.aspx.designer.cs">
+      <DependentUpon>DepartmentsHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentsList.aspx.cs">
+      <DependentUpon>DepartmentsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DepartmentsList.aspx.designer.cs">
+      <DependentUpon>DepartmentsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dictionary.aspx.cs">
+      <DependentUpon>Dictionary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dictionary.aspx.designer.cs">
+      <DependentUpon>Dictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryBlock.aspx.cs">
+      <DependentUpon>DictionaryBlock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DictionaryBlock.aspx.designer.cs">
+      <DependentUpon>DictionaryBlock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="easypaisa.cs" />
+    <Compile Include="ebook.aspx.cs">
+      <DependentUpon>ebook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ebook.aspx.designer.cs">
+      <DependentUpon>ebook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ebookdetails.aspx.cs">
+      <DependentUpon>ebookdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ebookdetails.aspx.designer.cs">
+      <DependentUpon>ebookdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Email.cs" />
+    <Compile Include="ExceptionHandling.cs" />
+    <Compile Include="feature.aspx.cs">
+      <DependentUpon>feature.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="feature.aspx.designer.cs">
+      <DependentUpon>feature.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgetPassword.aspx.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgetPassword.aspx.designer.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inte\intest.asmx.cs">
+      <DependentUpon>intest.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="inte\rabta.asmx.cs">
+      <DependentUpon>rabta.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="inte\ValidateUsrsForapi.cs" />
+    <Compile Include="IPIntegrationValidation.cs" />
+    <Compile Include="jazzcashpayment.aspx.cs">
+      <DependentUpon>jazzcashpayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jazzcashpayment.aspx.designer.cs">
+      <DependentUpon>jazzcashpayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LastestCasesPublic.aspx.cs">
+      <DependentUpon>LastestCasesPublic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LastestCasesPublic.aspx.designer.cs">
+      <DependentUpon>LastestCasesPublic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LatestCases.aspx.cs">
+      <DependentUpon>LatestCases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LatestCases.aspx.designer.cs">
+      <DependentUpon>LatestCases.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LatestDepartmentsList.aspx.cs">
+      <DependentUpon>LatestDepartmentsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LatestDepartmentsList.aspx.designer.cs">
+      <DependentUpon>LatestDepartmentsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LegalMaxim.aspx.cs">
+      <DependentUpon>LegalMaxim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LegalMaxim.aspx.designer.cs">
+      <DependentUpon>LegalMaxim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LegalMaximBlock.aspx.cs">
+      <DependentUpon>LegalMaximBlock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LegalMaximBlock.aspx.designer.cs">
+      <DependentUpon>LegalMaximBlock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Legislation.aspx.cs">
+      <DependentUpon>Legislation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Legislation.aspx.designer.cs">
+      <DependentUpon>Legislation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Location.cs" />
+    <Compile Include="MemberHome.aspx.cs">
+      <DependentUpon>MemberHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberHome.aspx.designer.cs">
+      <DependentUpon>MemberHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MemberMaster.Master.cs">
+      <DependentUpon>MemberMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberMaster.Master.designer.cs">
+      <DependentUpon>MemberMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MyAccount.aspx.cs">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyAccount.aspx.designer.cs">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyFolders.aspx.cs">
+      <DependentUpon>MyFolders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyFolders.aspx.designer.cs">
+      <DependentUpon>MyFolders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MySearch.aspx.cs">
+      <DependentUpon>MySearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MySearch.aspx.designer.cs">
+      <DependentUpon>MySearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MySubscription.aspx.cs">
+      <DependentUpon>MySubscription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MySubscription.aspx.designer.cs">
+      <DependentUpon>MySubscription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\CasesAdvanceSearch.aspx.cs">
+      <DependentUpon>CasesAdvanceSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\CasesAdvanceSearch.aspx.designer.cs">
+      <DependentUpon>CasesAdvanceSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\CitationDetails.aspx.cs">
+      <DependentUpon>CitationDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\CitationDetails.aspx.designer.cs">
+      <DependentUpon>CitationDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\CitationsList.aspx.cs">
+      <DependentUpon>CitationsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\CitationsList.aspx.designer.cs">
+      <DependentUpon>CitationsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\DepartmentDocumentView.aspx.cs">
+      <DependentUpon>DepartmentDocumentView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\DepartmentDocumentView.aspx.designer.cs">
+      <DependentUpon>DepartmentDocumentView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\DepartmentsHome.aspx.cs">
+      <DependentUpon>DepartmentsHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\DepartmentsHome.aspx.designer.cs">
+      <DependentUpon>DepartmentsHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\DepartmentsList.aspx.cs">
+      <DependentUpon>DepartmentsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\DepartmentsList.aspx.designer.cs">
+      <DependentUpon>DepartmentsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\General.Master.cs">
+      <DependentUpon>General.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\General.Master.designer.cs">
+      <DependentUpon>General.Master</DependentUpon>
+    </Compile>
+    <Compile Include="m\Legislation.aspx.cs">
+      <DependentUpon>Legislation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\Legislation.aspx.designer.cs">
+      <DependentUpon>Legislation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\MemberHome.aspx.cs">
+      <DependentUpon>MemberHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\MemberHome.aspx.designer.cs">
+      <DependentUpon>MemberHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\MemberMaster.Master.cs">
+      <DependentUpon>MemberMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\MemberMaster.Master.designer.cs">
+      <DependentUpon>MemberMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="m\MyFolder.aspx.cs">
+      <DependentUpon>MyFolder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\MyFolder.aspx.designer.cs">
+      <DependentUpon>MyFolder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\Pages.aspx.cs">
+      <DependentUpon>Pages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\Pages.aspx.designer.cs">
+      <DependentUpon>Pages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\PracticeArea.aspx.cs">
+      <DependentUpon>PracticeArea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\PracticeArea.aspx.designer.cs">
+      <DependentUpon>PracticeArea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\PracticeAreaSearchGeneral.aspx.cs">
+      <DependentUpon>PracticeAreaSearchGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\PracticeAreaSearchGeneral.aspx.designer.cs">
+      <DependentUpon>PracticeAreaSearchGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\PracticeAreaSearchResult.aspx.cs">
+      <DependentUpon>PracticeAreaSearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\PracticeAreaSearchResult.aspx.designer.cs">
+      <DependentUpon>PracticeAreaSearchResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\StatutesIndex.aspx.cs">
+      <DependentUpon>StatutesIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\StatutesIndex.aspx.designer.cs">
+      <DependentUpon>StatutesIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\StatutesIndexDetails.aspx.cs">
+      <DependentUpon>StatutesIndexDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\StatutesIndexDetails.aspx.designer.cs">
+      <DependentUpon>StatutesIndexDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\StatutesList.aspx.cs">
+      <DependentUpon>StatutesList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\StatutesList.aspx.designer.cs">
+      <DependentUpon>StatutesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\StatutesListAutoFilter.aspx.cs">
+      <DependentUpon>StatutesListAutoFilter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\StatutesListAutoFilter.aspx.designer.cs">
+      <DependentUpon>StatutesListAutoFilter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m\usercontrols\TopArea.ascx.cs">
+      <DependentUpon>TopArea.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m\usercontrols\TopArea.ascx.designer.cs">
+      <DependentUpon>TopArea.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewsLive.aspx.cs">
+      <DependentUpon>NewsLive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsLive.aspx.designer.cs">
+      <DependentUpon>NewsLive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderConfirmation.aspx.cs">
+      <DependentUpon>OrderConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderConfirmation.aspx.designer.cs">
+      <DependentUpon>OrderConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OverLimit.aspx.cs">
+      <DependentUpon>OverLimit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OverLimit.aspx.designer.cs">
+      <DependentUpon>OverLimit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages.aspx.cs">
+      <DependentUpon>Pages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages.aspx.designer.cs">
+      <DependentUpon>Pages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PDFGenerator.cs" />
+    <Compile Include="PracticeArea.aspx.cs">
+      <DependentUpon>PracticeArea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PracticeArea.aspx.designer.cs">
+      <DependentUpon>PracticeArea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PracticeAreaSearchGeneral.aspx.cs">
+      <DependentUpon>PracticeAreaSearchGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PracticeAreaSearchGeneral.aspx.designer.cs">
+      <DependentUpon>PracticeAreaSearchGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PracticeAreaSearchResult.aspx.cs">
+      <DependentUpon>PracticeAreaSearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PracticeAreaSearchResult.aspx.designer.cs">
+      <DependentUpon>PracticeAreaSearchResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyRewrite.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationPage.aspx.cs">
+      <DependentUpon>RegistrationPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrationPage.aspx.designer.cs">
+      <DependentUpon>RegistrationPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RestrictedRegion.aspx.cs">
+      <DependentUpon>RestrictedRegion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RestrictedRegion.aspx.designer.cs">
+      <DependentUpon>RestrictedRegion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReviewOrder.aspx.cs">
+      <DependentUpon>ReviewOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReviewOrder.aspx.designer.cs">
+      <DependentUpon>ReviewOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchResults.aspx.cs">
+      <DependentUpon>SearchResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchResults.aspx.designer.cs">
+      <DependentUpon>SearchResults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service.asmx.cs">
+      <DependentUpon>Service.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="sitefeedback.aspx.cs">
+      <DependentUpon>sitefeedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitefeedback.aspx.designer.cs">
+      <DependentUpon>sitefeedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StatutesIndex.aspx.cs">
+      <DependentUpon>StatutesIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StatutesIndex.aspx.designer.cs">
+      <DependentUpon>StatutesIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StatutesIndexDetails.aspx.cs">
+      <DependentUpon>StatutesIndexDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StatutesIndexDetails.aspx.designer.cs">
+      <DependentUpon>StatutesIndexDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StatutesIndexDetails_Public.aspx.cs">
+      <DependentUpon>StatutesIndexDetails_Public.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StatutesIndexDetails_Public.aspx.designer.cs">
+      <DependentUpon>StatutesIndexDetails_Public.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StatutesList.aspx.cs">
+      <DependentUpon>StatutesList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StatutesList.aspx.designer.cs">
+      <DependentUpon>StatutesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StatutesListAutoFilter.aspx.cs">
+      <DependentUpon>StatutesListAutoFilter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StatutesListAutoFilter.aspx.designer.cs">
+      <DependentUpon>StatutesListAutoFilter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Subscription.aspx.cs">
+      <DependentUpon>Subscription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Subscription.aspx.designer.cs">
+      <DependentUpon>Subscription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Withoutlogin.Master.cs">
+      <DependentUpon>Withoutlogin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Withoutlogin.Master.designer.cs">
+      <DependentUpon>Withoutlogin.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="adminpanel\dbfilescases\" />
+    <Folder Include="adminpanel\dbfilesothers\" />
+    <Folder Include="adminpanel\dbfilesstatutes\" />
+    <Folder Include="adminpanel\Logs\" />
+    <Folder Include="adminpanel\newsletter\banners\" />
+    <Folder Include="adminpanel\newsletter\htmlfiles\" />
+    <Folder Include="adminpanel\newsletter\mediafiles\docs\" />
+    <Folder Include="adminpanel\newsletter\mediafiles\imgs\" />
+    <Folder Include="adminpanel\newsletter\mediafiles\videos\" />
+    <Folder Include="adminpanel\printjournals\journals\" />
+    <Folder Include="m\css\menu\" />
+    <Folder Include="m\JSR - DONE\" />
+    <Folder Include="store\cases\videos\" />
+    <Folder Include="store\cms\docs\" />
+    <Folder Include="store\cms\imgs\" />
+    <Folder Include="store\cms\videos\" />
+    <Folder Include="store\departmentsfiles\imgs\" />
+    <Folder Include="store\departmentsfiles\videos\" />
+    <Folder Include="store\ebook\pdf\" />
+    <Folder Include="store\ebook\upload\" />
+    <Folder Include="store\generalareas\docs\" />
+    <Folder Include="store\generalareas\imgs\" />
+    <Folder Include="store\generalareas\videos\" />
+    <Folder Include="store\news\docs\" />
+    <Folder Include="store\news\imgs\" />
+    <Folder Include="store\news\videos\" />
+    <Folder Include="store\statutesdocs\pdf\" />
+    <Folder Include="store\statutesdocs\word\" />
+    <Folder Include="store\statutes\docs\" />
+    <Folder Include="store\statutes\imgs\" />
+    <Folder Include="store\statutes\videos\" />
+    <Folder Include="style\data1\tooltips\" />
+    <Folder Include="usercontrol\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EastLawBL\EastLawBL.csproj">
+      <Project>{ac0cb722-920b-4cd9-963e-2f9f4a5722f0}</Project>
+      <Name>EastLawBL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4253</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4253/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\netcoreapp3.0\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\netcoreapp3.0\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\netcoreapp3.0\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\netcoreapp3.0\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\build\net45\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\build\net45\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\netcoreapp3.0\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\netcoreapp3.0\EntityFramework.targets')" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\build\net45\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\build\net45\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

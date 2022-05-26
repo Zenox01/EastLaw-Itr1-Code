@@ -1,0 +1,22 @@
+
+.navbar
+{transition: all linear 0.5s;
+background: #fff;
+}
+
+
+.media-body
+{width:auto;}
+
+.top_nav a:hover
+{text-decoration:none;}
+
+.checkbox2
+{float:left;
+margin-right:5px;}
+
+.checkbox-p
+{float:left;
+}
+.media-body a:hover
+{text-decoration:none;}

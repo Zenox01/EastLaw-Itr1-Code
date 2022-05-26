@@ -1,0 +1,8 @@
+------------------------------------3/27/2018 10:34:55 PM-------------------
+Invalid length for a Base-64 char array or string.
+------------------------------------3/27/2018 10:35:03 PM-------------------
+Invalid length for a Base-64 char array or string.
+------------------------------------3/27/2018 10:35:52 PM-------------------
+Invalid length for a Base-64 char array or string.
+------------------------------------3/27/2018 10:36:05 PM-------------------
+Call GInSR with parameter: mid,19,Search Word:post,location:Mw== Mw==

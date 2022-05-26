@@ -1,0 +1,194 @@
+@media screen and (max-width: 1200px) and (min-width: 992px)
+{
+	.fixed{position:static;width:100%;}
+	.input_style
+	{    width: 219px !important;
+	    padding-left: 7px;
+		margin-top:3px;
+	
+	}
+	.text_style {
+    width: 82% !important;}
+	.img_style{width:101px;}
+	.navbar-nav>li>a{padding:10px 0 !important; font-size:12px !important;}
+	.navbar-nav>li:last-child{padding-right:0; border:0 !important;}
+    .login_text {
+    width:76%;}
+	}
+	@media screen and (max-width: 992px) and (min-width: 768px)
+	{
+        .ctrl-pr-mb{
+            padding-right:15px !important;
+        }
+        .mb-spacings {
+            padding: 0 !important;
+        }
+        .mb-spacings .padAllZeroRes {
+            margin-top: 10px
+        }
+        .padding_left_z {
+            padding-left: 15px !important;
+        }
+        .mobile-cong-row {
+            margin: 8px 0 !important;
+        }
+        .img_style {
+        width:84px;}
+		.navbar-nav>li>a{padding:10px 0 !important; font-size:10px !important;}
+	.navbar-nav>li:nth-child(6){padding-right:0; border:0 !important;}
+		.input_style{display:none;}
+		.top_nav ul li{padding:0 8px;}
+		.top_nav ul li a{font-size:10px !important;}
+		.cover{height:auto;}
+		.fixed{position:static;width:100%;}
+        .tab-content {
+        height:auto;}
+        .login_text {
+        margin-left:0;    width: 88%;}
+        .tabs_inner {
+        margin-left:0;
+        margin-bottom:10px;
+        }
+        .my_radio {
+        display:inline-block;
+        width:100%;
+        margin-top:10px;
+        }
+		}
+	
+	
+	
+	
+@media (max-width:767px){
+    .ctrl-pr-mb {
+        padding-right: 15px !important;
+    }
+    .mb-spacings{
+        padding:0 !important;
+    }
+    .mobile-cong-row {
+        margin: 8px 0 !important;
+    }
+    .mb-spacings .padAllZeroRes {
+        margin-top: 10px;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+        .padding_left_z {
+            padding-left: 15px !important;
+
+        }
+    /*.padAllZeroRes{
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }*/
+    .buttons a {
+        opacity: 0.4;
+    }
+	.buttons a:hover{opacity:1;}
+	.jumbotron.margin_bottom{margin-top:50px;}
+	
+	.cover{border:0 !important; height:auto !important;}
+	.style1{margin-top:4px;}
+	.navbar-nav{float:left !important;}
+	.navbar-nav>li{border:0 !important;}
+	.img_style{
+		    width: 76px !important;
+    display: inline-block !important;
+    float: left !important;
+    margin-left: 9px;}
+	#wowslider-container1{height:110px !important;}
+	#wowslider-container1 .ws_images{height:110px !important;}
+	.heading h2
+	{text-align:center; margin-bottom:10px !important;}
+	.heading{width:100%;}
+	.text_style2{width:67% !important;}
+	.footer1{border-bottom:0 !important;}
+	.jumbotron h2{font-size:20px !important;}
+	.padding_left{padding-right:0 !important; }
+	.heading h2{font-size:20px !important;}
+	.bg_cover{padding:13px 0 !important;}
+	.bg_cover.center{width:100%;}
+	.subscription ul li a{font-size:10px;}
+	.subscription ul li{padding:0 5px;}
+	.cover h2{    margin: 4px 0px 0 8px; font-size:19px;}
+	.span_style2{font-size:14px;}
+	.footer_parant i{font-size:2em !important;}
+	.span_style3{font-size:17px;}
+	.font{font-size:14px;}
+	.sign_up div{padding:0 !important;}
+	.research_text h2{margin:0; padding:0; font-size: 28px;}
+	.research_text2{margin:0;}
+	.research_text2 h6{font-size:13px;}
+	.tab-content{height:auto;}
+	.research_text2 p{font-size:13px;}
+	.login_text{margin:0;width:73%;}
+	.tab-content .margin_top{margin-top:3px;}
+	.my_radio{margin-bottom:8px; margin-top:5px;}
+	.tabs_inner{margin-bottom:4px; margin-left:0;}
+	.nav-tabs > li > a
+	{font-size: 12px;
+    padding: 11px 5px;}
+	.inner{padding:0; width:100%;border:0;}
+	.inner .form-control{width:100%; margin:0 !important;margin-bottom:5px !important;}
+	.box div{padding:0; display:inline-block; width:100%;margin-bottom:5px;}
+	.box .text_field2{border-radius:4px; width:100%;}
+	.date input{width:86% !important;}
+	.date .input-group-addon
+	{padding:9px 12px;}
+	.inner .form-control{height:34px !important;}
+	.box{margin:0;}
+	.box .text_field{border-radius:4px; width:100%;}
+	.box:nth-child(1){margin-top:12px !important;}
+	.box button{margin-bottom:10px;}
+	.text_field3{width:73%;}
+	.input-group-btn{width:auto !important ; float:left;}
+	.heading_style{    padding: 7px 0 !important;}
+	.second .inner{width:100% !important;}
+	.btn_2{border-radius:5px;}
+	.fstChoiceItem{padding-left:28px !important;font-size:14px;}
+	.fstResultItem{font-size:14px;}
+	.fstControls{margin-bottom:0;}
+	.fstMultipleMode .fstQueryInput{margin:0; padding:0;}
+	.fstElement{border-radius:4px;}
+	.fstMultipleMode .fstControls{margin-bottom:6px;}
+	.btn_style{padding:7px 20px;}
+	.btn_height2{display:none;}
+	.text_area{height:100px !important; margin-bottom:22px;}
+	.cover-up .form-group{margin-bottom:0;}
+	.cover-up input{margin-bottom:7px;}
+	.cover-up textarea{margin-bottom:16px;}
+	.sr_head{font-size:13px;}
+	.order p{padding:0;}
+	.fixed{position:static;width:100%;}
+	.carousel-inner>.item>a>img, .carousel-inner>.item>img{height:300px;}
+	table label{font-size:12px;}
+	.form-group h5{font-size:13px; margin-bottom:0 !important;}
+	.topper{margin:0; padding:0 10px;}
+	.topper .inner{padding:10px !important;}
+	.panal{width:100%;}
+	.table-striped{font-size:12px;}
+	.text_field4{width:84%;}
+	.topper{width:100%;}
+	.table-filter tr td:first-child{display:none;}
+	.table-filter tr td:nth-child(2){display:none;}
+	.details_data{width:100%;}
+	.details_data div{padding-left:0;}
+	.table-filter .media .title{font-size:13px;}
+	.table-filter .media .title span{margin:6px 0; float:left !important;}
+	.media-body p{font-size:12px;}
+	.table-filter .media .summary{font-size:12px;}
+	.heading1 h1{font-size:22px;}
+	.pkg-para{font-size:14px; line-height:unset; margin-top:5px; padding:0;}
+	.heading2 h1{font-size:16px;}
+	.packages-area .container{padding:0;}
+	.head-name h2{font-size:21px;}
+	.head-name span{font-size:14px;}
+	.pkg-price{margin-bottom:0;}
+	.pkg-price h2 span{float:none;}
+	.head-name{margin-left:20px !important;}
+	.description{text-align:center;}
+	.ebooksListing ul li img{margin:auto;}
+	
+	.ebooksDetail img{width: auto;}
+	}

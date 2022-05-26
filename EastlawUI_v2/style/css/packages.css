@@ -1,0 +1,132 @@
+#packages
+{/*background:#e1e5da;*/padding:40px 0; margin-bottom:3px;}
+
+
+.heading1{text-align:center;}
+.heading1 h1
+{text-align: center;
+    font-weight: 700;
+    color: rgb(23, 23, 23);
+    font-size: 35px;
+    letter-spacing: 0px;}
+
+.pkg-para
+{text-align: center;
+    margin-top: 26px;
+    line-height: 30px;
+    padding: 0px 20px;
+	display:inline-block;
+	font-size:18px;}
+
+.heading2
+{float: left;
+    width: 100%;
+    text-align: center;
+    color: rgb(23, 23, 23);
+    font-weight: 700;
+    margin-top: 14px;
+    font-size: 22px;}
+
+.heading2 h1
+{float: left;
+    width: 100%;
+    text-align: center;
+    color: rgb(23, 23, 23);
+    font-weight: 700;
+    margin-top: 14px;
+    font-size: 22px;}
+	
+.packages-area
+{width:100%;
+height:auto;
+margin-top:37px;
+}
+
+.pkg-col1
+{background:#fff;
+width:100%;
+    display: inline-block;
+    padding-bottom: 15px;
+position:relative;
+box-shadow: 0 0 11px #000;
+margin-bottom:30px;}
+
+.col1-head
+{width:100%;
+padding:32px 0;
+background:#da2128;display:inline-block;
+position:relative;
+}
+.head-img{float:left;margin-left:22px;}
+.head-name{float:left;margin-left:20px;}
+.head-name h2
+{color:#fff;
+font-weight:normal;
+font-size:26px;
+margin-bottom:0;margin-top:10px;}
+
+.head-name span{display: block;
+    margin-top: 3px;
+    font-size: 17px;color:#fff;}
+
+.head-seal{position:absolute; right:11px; float:left; top:24px;}
+
+.pkg-price
+{margin:10px 0;
+width:100%;float:left;}
+
+.pkg-price h2
+{color:#000;
+text-align:center;
+font-size:30px;
+font-weight:600;
+line-height:22px;}
+
+.pkg-price h2 span
+{color:#FF0000;
+font-size:12px;
+font-weight:normal;
+float: left;
+    padding-left: 5px;}
+
+
+.pkg-col1 input[type='button']{padding:7px 13px;color:#fff;font-size:16px;
+background:#da2128;
+border-radius:5px;
+text-align:center;
+margin-top:13px;
+float:right;
+border: 0;}
+
+
+.pkg-col1 input[type='button']:hover
+{
+background:#000 !important;}
+
+.pkg-list
+{width:100%;
+min-height:275px;
+padding: 0 40px 0 21px;
+float: left;
+    margin-top: 20px;}
+
+.pkg-list ul li
+{font-size: 14px;
+    letter-spacing: -.1px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d4d6da;
+    margin-bottom: 8px;
+    line-height: 15px;
+    color: #414144;
+	position: relative;
+    padding-left: 29px;}
+
+.pkg-btn{ position:absolute !important; bottom: 22px;}
+
+.pkg-btn1{ position:absolute !important; bottom: 22px;right:0;}
+
+.pkg-btn1 a{color:#000;border: 1px solid #ccc;
+    display: inline-block;
+    padding: 2px 6px;
+	border-radius:4px;
+	width:100%;text-align:center;}
